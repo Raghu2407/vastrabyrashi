@@ -1,0 +1,1241 @@
+<mvt:if expr="l.settings:basket:empty">
+    <input type="hidden" class="is_empty" value=1 />
+    <p class="empty-basket-message" style="text-align: center; font-weight: bold;font-family:ITCAvantGardePro-Bold">
+        OH NO! It looks like your cart is empty.
+    </p>
+    <div class="clearfix"></div>
+    <div class="product-item">
+        <img id="main_image-5751" class="main-product-image img-responsive" style="margin:0 auto;"
+            src="graphics/00000001/3/EmptyCart-icon_vv.png" alt="2-Ply Toilet Tissue by Junior Boy">
+    </div>
+    <mvt:exit />
+</mvt:if>
+<Mvt:ASSIGN Name="g.basketDiscount" Value="0" />
+<!-- Check for 3b discount -->
+<mvt:assign name="g.item3BDiscountTotal" value="0" />
+<!-- Check for 3b discount -->
+<div class="">
+    <div class="basket-header row">
+        <div class="containers-width" style="margin:0 0 10px 0px">
+            <div class="col-xs-5 col-sm-5 hidden-xs bask-header">
+                <h3 class="prhead ft-12p bold-ft bask-header-th bask-header-item">Item
+                </h3>
+            </div>
+            <div class="col-xs-12 visible-xs"
+                style="text-align: left;font-weight: 700;padding:10px 0px 6px 0px; font-size:12px;">
+                <div class="col-xs-4 bold-ft hidden">item </div>
+                <div class="col-xs-3 hidden">Price </div>
+                <div class="col-xs-2 hidden">Qty</div>
+                <div class="col-xs-3 hidden">Subtotal</div>
+            </div>
+            <div class="col-xs-7 col-sm-7 hidden-xs " style="padding:0px">
+                <mvt:comment>
+                    <div class="col-xs-2 col-sm-3 substitutuin pd-lt-zero"
+                        style="text-align: center;justify-content: center;align-items: center;display: flex;">
+                        <h3 class="ft-16p bold-ft">Allow <br />Substitutions</h3>
+                        <label class="checkboxContainer displayPrintNone">
+                            <input type="checkbox" id="checkAll" class="checkAll dcheckAll" data-code="&mvt:group:code;" data-groupid ="&mvte:group:group_id;"
+                                <mvt:if
+                            expr="miva_array_find(l.settings:group:code,l.settings:cart_substitutionsarr,0) GT 0">
+                            checked</mvt:if>>
+                        <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </mvt:comment>
+                <div class="col-xs-3 col-sm-3 bask-header" >
+                    <h3 class="ft-12p bold-ft bask-header-th">Price</h3>
+                </div>
+                <div class="col-xs-3 col-sm-4 bask-header">
+                    <h3 class="ft-12p bold-ft bask-header-th">qty</h3>
+                </div>
+                <div class="col-xs-4 col-sm-4 bask-header" >
+                    <h3 class="ft-12p bold-ft bask-header-th">Subtotal</h3>
+                </div>
+                <div class="col-xs-4 col-sm-1 bask-header" >
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <mvt:assign name="g.SpecialShipping" value="'0'" />
+    <mvt:assign name="g.iswinepresent" value="'0'" />
+    <mvt:assign name="g.isUserAccountisWine" value="'0'" />
+    <mvt:assign name="l.settings:wine_check_val" VALUE="0"/>
+    <mvt:assign name="g.isUserAccountisWineClass" value="''" />
+    <mvt:item name="customfields" param="Read_Customer_ID(g.Basket:Cust_id, 'wine_account', l.settings:wine_account)" />
+    <div class="parent">
+        <div class="child scrollShowHide">
+            <mvt:assign name="l.settings:removewineitem" value=" " />
+
+            <mvt:foreach iterator="group" array="basket:groups">
+                <mvt:assign name="l.settings:group:formatted_price" value="l.settings:group:price Round 2" />
+                <mvt:assign name="l.settings:group:formatted_subtotal" value="l.settings:group:subtotal Round 2" />
+                <mvt:do file="g.Module_Store_Module_Currency" name="l.settings:group:formatted_price"  value="CurrencyModule_AddFormatting(g.Store:currncy_mod, l.settings:group:formatted_price)" />
+                <mvt:do file="g.Module_Store_Module_Currency" name="l.settings:group:formatted_subtotal"  value="CurrencyModule_AddFormatting(g.Store:currncy_mod, l.settings:group:formatted_subtotal)" />
+                <mvt:comment>Gift box code</mvt:comment>
+                <mvt:item name="customfields"   param="Read_Product_Code( l.settings:group:parent, 'giftbox_check', l.settings:giftbox_check )" />
+                <mvt:comment>Gift box code</mvt:comment>
+                <mvt:comment>Cath weight custom filed</mvt:comment>
+                <mvt:item name="customfields"   param="Read_Product_Code( l.settings:group:code, 'catch_weight', l.settings:catch_weight )" />
+                <mvt:comment>Cath weight custom filed</mvt:comment>
+                <mvt:if expr="(l.settings:load_customer:account_id EQ 1 AND l.settings:taxId) OR (l.settings:load_customer:account_id EQ 3 AND l.settings:taxId)">
+                <mvt:item name="customfields"   param="Read_Product_ID(l.settings:group:Product_ID, 'brand', l.settings:brand)" />
+                <mvt:else>
+                <mvt:comment>Check for threebie pricegroup start</mvt:comment>
+                <mvt:do name="l.return" file="g.Module_Library_DB"   value="Product_Load_Code( l.settings:group:code, l.settings:cproduct )" />
+                <mvt:item name="customfields"   param="Read_Product_Code( l.settings:group:code, 'price_group', l.settings:bask_price_group )" />
+                <mvt:item name="customfields"   param="Read_Product_Code( l.settings:group:code, 'typeofProduct', l.settings:typeofProduct )" />
+                <mvt:item name="customfields"   param="Read_Product_ID(l.settings:group:Product_ID, 'brand', l.settings:brand)" />
+                <mvt:assign name="l.settings:iscartproductThreebie" value="'No'" />
+                <mvt:assign name="l.settings:iscartmarketproductThreebie" value="'No'" />
+                <mvt:assign name="l.settings:threebies" value="''" />
+                <mvt:assign name="l.settings:threebiesCheck" value="'0'" />
+                
+                <!-- market threebie product -->
+                <mvt:if expr="(l.settings:typeofProduct EQ 1 OR l.settings:typeofProduct EQ 'yes')">
+                <mvt:do file="g.Module_Feature_PGR_DB" name="l.settings:threebiesCheck" value="PriceGroupXProduct_Load(174, l.settings:cproduct:id, l.settings:threebies)" />
+                <mvt:if expr="l.settings:threebiesCheck GT 0 ">
+                <!-- market threebie -->
+                                <mvt:assign name="l.settings:iscartmarketproductThreebie" value="'Yes'" />
+                                <mvt:item name="customfields" param="Read_Product_ID(l.settings:productchild:id, 'price_per_lb_threebies', l.settings:wholesale_price_per_lb)" />
+                                <mvt:else>
+                                <mvt:assign name="l.settings:iscartmarketproductThreebie" value="'No'" />
+                </mvt:if>
+                <mvt:else>
+                <!-- global threebie -->
+                <mvt:do file="g.Module_Feature_PGR_DB" name="l.settings:threebiesCheck" value="PriceGroupXProduct_Load(166, l.settings:cproduct:id, l.settings:threebies)" />
+                <mvt:if expr="l.settings:threebiesCheck GT 0">
+                                <mvt:assign name="l.settings:iscartproductThreebie" value="'Yes'" />
+                                <mvt:item name="customfields" param="Read_Product_ID(l.settings:productchild:id, 'price_per_lb_threebies', l.settings:wholesale_price_per_lb)" />
+                                <mvt:else>
+                                <mvt:assign name="l.settings:iscartproductThreebie" value="'No'" />
+                </mvt:if>
+                </mvt:if>
+
+                <!-- market threebie product check -->
+
+                <!-- market threebie product check -->
+
+
+
+                
+                <mvt:comment>Check for threebie pricegroup end</mvt:comment>
+
+                <mvt:comment>Check for market product with discount start</mvt:comment>
+                <mvt:assign name="g.mixandmatchCounter" value="'0'" />
+                <mvt:assign name="l.settings:mixandmatchvalue" value="''" />
+                <mvt:assign name="l.settings:mixandmatchcheck" value="'0'" />
+                <mvt:assign name="g.checkformixproductsincart" value="'noteligibleformix'" />
+                    <!-- &mvt:global:checkformixproductsincart; -->
+                    <mvt:do file="g.Module_Feature_PGR_DB" name="l.ok" value="PriceGroup_Load_Name( 'MixMatch', l.settings:mixprice_group )" />
+                    <mvt:do file="g.Module_Feature_PGR_DB" name="l.settings:mixandmatchcheck" value="PriceGroupXProduct_Load(161, l.settings:group:product_id, l.settings:mixandmatchvalue)" />
+                    <mvt:if expr="l.settings:mixandmatchcheck GT 0">
+                        <mvt:assign name="g.checkformixproductsincart" value="'eligibleformix'" />
+                    </mvt:if>
+                    <!-- &mvt:mixandmatchvalue; -->
+                </mvt:if>
+                <mvt:comment>Check for market product with discount end </mvt:comment>
+                <mvt:comment>Code to check parent level category </mvt:comment>
+                    <mvt:assign name="g.assigned_categories" value="''" /> 
+                    <mvt:do name="l.result" file="g.Module_Library_DB" value="Category_Load_ID( l.settings:current_category:parent_id, l.settings:parent_category )" />
+                    <mvt:do name="l.result" file="g.Module_Library_DB" value="CategoryList_Load_Offset_Product_Assigned(l.settings:group:product:id,0,'','',0,l.null, g.assigned_categories )" />
+                    <mvt:do name="l.result" file="g.Module_Library_DB" value="CategoryList_Load_Offset(l.settings:group:id,0,'','',0,l.null, g.assigned_categories )" />
+                    <mvt:do name="l.result" file="g.Module_Library_DB" value="Category_Load_Code( l.settings:group:code, l.settings:current_category )" />
+                    <mvt:comment>Code to check parent level category </mvt:comment>
+
+
+                    <mvt:comment>Code to check wine products</mvt:comment>
+                    <mvt:if expr="g.assigned_categories[1]:code EQ 'market' OR g.assigned_categories[1]:code EQ 'Market'">
+                    <mvt:item name="customfields" param="Read_Category_Code( g.assigned_categories[2]:code, 'wine_check', g.wine_check)" />
+                    <mvt:item name="customfields" param="Read_Category_Code( g.assigned_categories[2]:code, 'texas_restriction', g.texas_restriction)" />
+                    <mvt:else>
+                        <mvt:item name="customfields" param="Read_Category_Code( g.assigned_categories[1]:code, 'wine_check', g.wine_check)" />
+                    <mvt:item name="customfields" param="Read_Category_Code( g.assigned_categories[1]:code, 'texas_restriction', g.texas_restriction)" />
+                   
+                    </mvt:if>
+                     <mvt:if expr="g.customer:ship_state">
+                      <mvt:if expr="g.wine_check EQ 'Yes' OR g.wine_check EQ '1' AND g.customer:ship_state NE 'TX'">
+                      <mvt:if expr="g.Basket:Cust_id">
+                            <mvt:assign name="l.settings:loggedinwinecheck" value="'loggedinwinecheck'" /> 
+                            <mvt:assign name="l.settings:removewineitem" value="'removewineitem'" />
+			                    <mvt:assign name="g.iswinepresent" value="'1'" />
+                                <mvt:else>
+                                    <mvt:assign name="l.settings:loggedinwinecheck" value="'nologgedinwinecheck'" />
+                                    <mvt:assign name="l.settings:removewineitem" value="'noremovewineitem'" />
+				                <mvt:assign name="g.iswinepresent" value="'0'" />
+                     </mvt:if>
+                    </mvt:if>
+                    </mvt:if>
+                    <mvt:comment>Code to check wine products</mvt:comment>
+
+
+                    <mvt:comment>TO check wholesale wine</mvt:comment>
+
+
+    
+                                    <mvt:if expr="l.settings:load_customer:account_id EQ 1 AND l.settings:taxId AND (l.settings:wine_account EQ 1 OR l.settings:wine_account EQ 'yes')">
+                                    <mvt:assign name="g.assigned_categories" VALUE="0"/>
+                                    <mvt:assign name="g.isUserAccountisWineClass" value="'nothisisnotwineaccount'" />
+                                    <mvt:assign name="g.notuserwineproduct" value="'notuserwineproduct'" /> 
+                                    <mvt:do name="l.result" file="g.Module_Library_DB" value="CategoryList_Load_Offset_Product_Assigned(l.settings:group:product:id,0,'','',0,l.null, l.settings:assigned_categories )" />
+                                    <mvt:if expr="l.settings:assigned_categories">
+                                          <mvt:foreach iterator="assigned_category" array="assigned_categories">
+                                            <mvt:item name="customfields" param="Read_Category_Code( l.settings:assigned_category:code, 'wine_check', g.wine_check)" />
+                                            <mvt:if expr="g.wine_check AND (l.settings:wine_account EQ 1 OR l.settings:wine_account EQ 'yes')"> 
+                                            <mvt:assign name="l.settings:wine_check_val" VALUE="1"/>
+                                            <mvt:assign name="l.settings:wineCounter" value="l.settings:wineCounter+1" />
+					  	                    <mvt:assign name="g.iswinepresent" value="1" />    
+                                             <mvt:assign name="g.isUserAccountisWineClass" value="'yesthisiswineaccount'" />
+                                             <mvt:assign name="g.notuserwineproduct" value="'userwineproduct'" /> 
+                                              <mvt:foreachcontinue/>
+                                              <mvt:else>
+                                            </mvt:if>
+                                          </mvt:foreach>  
+                                    </mvt:if>
+                                    </mvt:if>
+    
+    
+
+                    <mvt:comment>TO check wholesale wine</mvt:comment>
+
+                <mvt:item name="frfunctions" param="qtyincart|l.all_settings:group:product_id" />
+                <Mvt:ASSIGN NAME="l.settings:inventory" value="999999" />
+                <mvt:do name="l.return" file="g.Module_Library_DB"   value="Runtime_Product_Load_ID( l.settings:group:product_id, l.settings:pproduct )" />
+                <mvt:item name="customfields"   param="Read_Product_Code( l.settings:group:code, 'pack_size', l.settings:minqty )" />
+                
+            
+                
+               
+                <mvt:if expr="ISNULL l.settings:minqty">
+                    <mvt:assign name="l.settings:minqty" value="1" />
+                </mvt:if>
+                
+                <mvt:comment>Standalone Product Inventory Fix Start</mvt:comment>
+                <mvt:do file="g.Module_Library_DB" name="l.settings:checkChildProducts" value="ProductVariantList_Load_Product( l.settings:group:product_id, l.settings:product:variants )" />
+                <mvt:if expr="l.settings:checkChildProducts">
+                    <mvt:if EXPR="l.settings:pproduct:inv_active">
+                        <mvt:do file="g.Module_Library_DB" name="l.settings:stockcart" value="Basket_Quantity(g.basket:basket_id, l.settings:pproduct:id" />
+                        <Mvt:ASSIGN NAME="l.settings:inventory" value="l.settings:pproduct:inv_available-g.fr_qtyincart" />
+                    </mvt:if>
+                <mvt:else>
+                    <Mvt:ASSIGN NAME="l.settings:inventory" value="l.settings:pproduct:inv_available-l.settings:group:quantity" />
+                    <mvt:assign name="l.settings:minqty" value="1" />
+                </mvt:if>
+
+                <mvt:comment>Standalone Product Inventory Fix End</mvt:comment>
+
+                <mvt:item name="customfields"
+                    param="Read_Product_Code(l.settings:group:code, 'specialShipping', l.settings:specialShipping )" />
+                <mvt:if expr="l.settings:specialShipping">
+                    <mvt:assign name="g.SpecialShipping" value="'1'" />
+                </mvt:if>
+                <mvt:item name="216_MonkeyWrench" param="calculate-line-item-subtotal|l.all_settings:group:line_id" />
+                <mvt:item name="216_MonkeyWrench"
+                    param="check-product-for-master-product|l.all_settings:group:product_id" />
+                <mvt:assign name="l.settings:group:parent" value="l.settings:group:code" />
+                <mvt:if expr="l.settings:group:master_code">
+                    <mvt:assign name="l.settings:group:parent" value="l.settings:group:master_code" />
+                </mvt:if>
+                <div class="clearfix"></div>
+
+                <mvt:assign name="l.settings:wscartdisbledclass" value="''"/>
+                <mvt:item name="customfields" param="Read_Product_Code(l.settings:group:parent, 'non-fedex', l.settings:basketnofedexcheck)" />
+                <mvt:if expr="l.settings:basketnofedexcheck">
+                <mvt:assign name="g.nofedex" value="1" />
+                </mvt:if>   
+                <mvt:item name="customfields" param="Read_Customer_ID(g.Basket:Cust_id, 'tax_id_number', l.settings:taxId)" />
+                <mvt:item name="customfields" param="Read_Product_ID(l.settings:group:product_id, 'retail_only_Items', l.settings:retailonly )" />
+                <mvt:if expr="l.settings:load_customer:account_id EQ 1 AND l.settings:taxId AND l.settings:taxId AND (l.settings:retailonly EQ 1 OR l.settings:retailonly EQ 'yes') ">
+                <mvt:assign name="l.settings:wscartdisbledclass" value="'wscartdisbledclass'"/>                          
+                </mvt:if>
+
+                <div class="product-row ft-14p row bask-&mvte:group:group_id; &mvt:wscartdisbledclass">
+                    <mvt:if expr="l.settings:group:option_count">
+                        <mvt:assign name="l.settings:rowspan" value="l.settings:group:option_count + 1" />
+                        <mvt:else>
+                            <mvt:assign name="l.settings:rowspan" value="1" />
+                    </mvt:if>
+
+                    <div class="col-xs-12 col-sm-5 hidden-xs paddingZero">
+                        <div class="col-xs-4 col-lg-3 paddingZero">                           
+                            <mvt:assign name="l.uri:store_id" value="g.Store:id" />
+                            <mvt:assign name="l.uri:product_id" value="l.settings:pproduct:id" />
+                            <mvt:do file="g.Module_Feature_URI_DB" name="l.have_uri"
+                                value="URI_Load_Item_Canonical( l.uri, l.settings:pproduct_uri )" />
+
+
+                            <mvt:if expr="l.have_uri">
+                                <mvt:assign name="l.settings:pproduct:link" value="l.settings:pproduct_uri:uri" />
+                            </mvt:if>
+                            <div class="image-wrapper" style="position:relative;">
+                                <mvt:item name="216_MonkeyWrench"
+                                    param="load-most-appropriate-image-for-basket-and-order-contents-product|basket|l.all_settings:group:line_id" />
+                                    <mvt:if expr="l.settings:contents_product_image EQ ''">
+                                        <mvt:assign name="l.settings:contents_product_image" value="'graphics/00000001/3/ComingSoon-MW_530x530.jpg'" />
+                                    </mvt:if>
+                                <mvt:if expr="l.settings:pproduct">
+                                    <a href=/prod.html?product_code=&mvt:group:parent;"><img data-src="&mvt:contents_product_image;" src="&mvt:contents_product_image;"
+                                            alt="&mvt:group:name;" title="&mvt:group:name;"
+                                            class="image-responsive" /></a>
+                                    <mvt:else>
+                                        <mvt:if expr="len(l.settings:master_product_code)">
+                                            <a href="&mvt:group:link;"><img data-src="&mvt:contents_product_image;" src="&mvt:contents_product_image;"
+                                                    alt="&mvt:group:name;" title="&mvt:group:name;"
+                                                    class="image-responsive" /></a>
+                                            <mvt:else>
+                                                <a href="&mvt:group:link;"><img data-src="&mvt:contents_product_image;" src="&mvt:contents_product_image;"
+                                                        alt="&mvt:group:name;" title="&mvt:group:name;"
+                                                        class="image-responsive" /></a>
+                                        </mvt:if>
+                                </mvt:if>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 col-lg-9">
+                            <div class="">
+                                <mvt:if expr="l.settings:pproduct">
+                                    <a href="/prod.html?product_code=&mvt:group:parent;" class="prodnamelink">
+                                        <div class="item-name mb-ft-14p ft-md ft-14p">
+                                            &mvt:group:name; <mvt:if expr="l.settings:brand NE '' ">by &mvt:brand; </mvt:if>
+                                        </div>
+                                        <mvt:if expr="l.settings:basketnofedexcheck">
+                                                                            <span class="ft-demi ft-10p txt-orange"><br/>This item is unavailable to ship via Fedex. Please check available shipping options</span>
+                                                                        </mvt:if>
+                                    </a>
+                                    <mvt:if expr="g.Basket:Cust_ID">
+                                        <mvt:item name="wlprodcount" param="l.all_settings:pproduct:id" />
+                                        <a href="javascript:;" class="addFav <mvt:if expr=" g.wltotalprodcount GT
+                                            0">removeWishlist
+                                            <mvt:else>
+                                                addWishlist
+                                    </mvt:if>"data-wishlist="&mvt:pproduct:id;" data-wishlistid="&mvt:wishlist[1]:id;"
+                                    data-code="&mvt:pproduct:code;" data-sku="&mvt:group:code;" style="display:none">
+                                    <i class="fa <mvt:if expr=" g.wltotalprodcount GT 0">fa-heart<mvt:else>fa-heart-o
+                                </mvt:if>"></i>
+                                </a>
+                                <mvt:else>
+                                    <a href="javascript:;" class="addFav retailaddFav" data-page="&mvt:global:Screen;"
+                                        data-search="&mvt:global:search;" data-ctgy="&mvt:global:Category_Code;"
+                                        data-prod="&mvt:global:Product_Code;" style="display:none">
+                                        <i class="fa fa-heart-o"></i>
+                                    </a>
+                                    </mvt:if>
+                                    <mvt:else>
+                                        <mvt:if expr="len(l.settings:master_product_code)">
+                                            <a href="&mvt:group:link;">
+                                                <div class="item-name hidden-xs">
+                                                    &mvt:group:name;
+                                                </div>
+                                                <mvt:if expr="l.settings:basketnofedexcheck">
+                                                                            <span class="ft-demi ft-10p txt-orange"><br/>This item is unavailable to ship via Fedex. Please check available shipping options</span>
+                                                                        </mvt:if>
+                                            </a>
+                                            <mvt:else>
+                                                <a href="&mvt:group:link;">
+                                                    <div class="item-name hidden-xs">
+                                                        &mvt:group:name;
+                                                    </div>
+                                                    <mvt:if expr="l.settings:basketnofedexcheck">
+                                                                            <span class="ft-demi ft-10p txt-orange"><br/>This item is unavailable to ship via Fedex. Please check available shipping options</span>
+                                                                        </mvt:if>
+                                                </a>
+                                        </mvt:if>
+                                        </mvt:if>
+                                        <mvt:assign name="l.settings:wishlistlink"
+                                            value="g.Secure_sessionurl$'Screen='$g.Screen$'&Action=ATWL&Product_Code=' $ l.settings:group:code$ '&Quantity=1'" />
+                                        <mvt:assign name="l.groupPriceAffectedByOptions" value="'false'" />
+                                        <mvt:assign name="l.settings:ocounter" value="0" />
+                                        <mvt:item name="customfields"
+                                                    param="Read_Product_Code(l.settings:group:code, 'pack_size', l.settings:packsizevalue )" />
+                                                <mvt:item name="customfields" param="Read_Product_Code(l.settings:group:code, 'uom', l.settings:uomvalue )" />
+                                        
+                                                <mvt:item name="customfields"
+                                                    param="Read_Product_Code(l.settings:group:code, 'display_uom', l.settings:display_uom )" />
+                                        <mvt:foreach iterator="option" array="group:options">
+                                            <div class="options-row gray 1">
+                                                <mvt:if expr="g.accountType NE 'Non-Profit'">
+                                                    <div class="decpr 1">
+                                                        <mvt:assign name="l.settings:option:attr_prompt"
+                                                            value="glosub(l.settings:option:attr_prompt,'Select ','')" />
+                                                        <mvt:if expr="l.settings:option:option_id">
+                                                            &mvt:option:opt_prompt;
+                                                            <mvt:elseif expr="NOT ISNULL l.settings:option:data">
+                                                                &mvt:option:data;
+                                                                <mvt:elseif expr="NOT ISNULL l.settings:option:data_long">
+                                                                    &mvt:option:data_long;
+                                                                    <mvt:else>
+                                                                        &mvt:option:attr_prompt;
+                                                        </mvt:if>
+                                                        <mvt:foreach iterator="discount" array="option:discounts">
+                                                            <mvt:if expr="l.settings:discount:display">
+                                                                <MVT:COMMENT>
+                                                                    <div class="item-discount">
+                                                                        &mvt:discount:descrip;:
+                                                                        &mvt:discount:formatted_discount;
+                                                                    </div>
+                                                                </MVT:COMMENT>
+                                                            </mvt:if>
+                                                            <Mvt:ASSIGN Name="g.basketDiscount" Value="g.basketDiscount+l.settings:discount:discount" />
+                                                        </mvt:foreach>
+                                                    </div>
+                                                </mvt:if>
+                                                <mvt:item name="customfields"
+                                                    param="Read_Product_Code(l.settings:group:code, 'unit_size', l.settings:unit_size )" />
+                                                <mvt:if expr="l.settings:unit_size">
+                                                    <div class="decpr 3">
+                                                        &mvt:unit_size;
+                                        
+                                                        <mvt:if expr="l.settings:load_customer:account_id EQ 1 AND l.settings:taxId">
+                                                            <mvt:else>
+                                                                <mvt:item name="customfields"
+                                                                    param="Read_Product_Code( l.settings:group:parent, 'heavy_weight_item', l.settings:heavy_weight_item )" />
+                                                                <mvt:if expr="l.settings:heavy_weight_item">
+                                                                    <span class="pointer" data-toggle="tooltip" data-placement="bottom"
+                                                                        title="Heavy weight item, additional delivery fee may apply.">
+                                                                        <span class="material-symbols-sharp txt-orange ft-16p vertical-center">
+                                                                            weight
+                                                                        </span>
+                                                                    </span>
+                                                                </mvt:if>
+                                                        </mvt:if>
+                                                    </div>
+                                                </mvt:if>
+                                                <mvt:item name="customfields"
+                                                    param="Read_Product_Code(l.settings:group:code, 'pack_size', l.settings:packsizevalue )" />
+                                                <mvt:item name="customfields" param="Read_Product_Code(l.settings:group:code, 'uom', l.settings:uomvalue )" />
+                                        
+                                                <mvt:item name="customfields"
+                                                    param="Read_Product_Code(l.settings:group:code, 'display_uom', l.settings:display_uom )" />
+                                                <mvt:item name="customfields"
+                                                    param="Read_Product_Code(l.settings:group:code, 'unit_size', l.settings:unit_sizeshow )" />
+                                        
+                                                <mvt:if expr="l.settings:packsizevalue GT 1">
+                                                    <div class="decpr 2">
+                                        
+                                                        <mvt:if expr="g.accountType NE 'Non-Profit'">
+                                                            <mvt:if
+                                                                expr="'mkt' CIN g.assigned_categories[1]:code  OR g.assigned_categories[1]:code EQ 'market' ">
+                                                                <mvt:if expr="l.settings:unit_sizeshow OR l.settings:unit_sizeshow NE ''">
+                                                                    &mvt:unit_sizeshow;
+                                                                    <mvt:else>
+                                                                        &mvt:display_uom;
+                                                                </mvt:if>
+                                        
+                                                                <mvt:else>
+                                                                    <mvt:if expr="l.settings:uomvalue EQ 'Each'">
+                                                                        &mvt:packsizevalue; &mvt:uomvalue;
+                                                                        <mvt:else>
+                                                                            &mvt:uomvalue; of &mvt:packsizevalue;
+                                                                    </mvt:if>
+                                                            </mvt:if>
+                                                            <mvt:else>
+                                                                <mvt:if expr="l.settings:display_uom OR l.settings:display_uom NE ''">
+                                                                    &mvt:display_uom;
+                                                                    <mvt:else>
+                                                                        &mvt:uomvalue;
+                                                                </mvt:if>
+                                                        </mvt:if>
+                                                    </div>
+                                        
+                                                    <mvt:if expr="miva_array_find(l.settings:group:product_id,l.settings:saveditemsarr,0) LT 1 AND g.accountType NE 'Non-Profit'">
+                                                        <div style="width:100px 1">
+                                                            <mvt:if expr="g.Basket:cust_id">
+                                                                <a class="font10 saveItemLater <mvt:if expr='(l.settings:load_customer:account_id EQ 1 AND l.settings:taxId) OR g.accountType EQ "Non-Profit" '>hidden</mvt:if>"
+                                                                                                            style="color: #628e83;cursor:pointer;font-size: 12px;"
+                                                                                                            data-code="&mvt:group:product_id;-&mvt:group:price;-&mvt:cproduct:id;"  data-groupid ="&mvte:group:group_id;" data-product-parentid="&mvt:group:product_id;" data-productprice="&mvt:group:code;=&mvt:group:price;">Save for
+                                                                                                            later</a>
+                                                                                                        <mvt:else> 
+                                                                                                            <a class="font10 checkoutloginsaveforlater"
+                                                                                                                style="color: #628e83;cursor:pointer;font-size: 12px;">Save
+                                                                                                                for
+                                                                                                                later</a>
+                                                                                                    </mvt:if>
+                                                                                                </div>
+                                                                                            </mvt:if>
+                                        
+                                        
+                                        
+                                                                    <mvt:elseif expr="l.settings:packsizevalue EQ 1 AND g.accountType NE 'Non-Profit'">
+                                                                    <div class="decpr packsize 1">&mvt:packsizevalue; &mvt:uomvalue;
+                                                                    </div>
+                                                                    <mvt:elseif expr="g.accountType EQ 'Non-Profit'">
+                                                                        <div class="decpr non-profit new">
+                                                                            <mvt:if expr="l.settings:display_uom OR l.settings:display_uom NE ''">
+                                                                                &mvt:display_uom;
+                                                                                <mvt:else>
+                                                                                    &mvt:uomvalue;
+                                                                            </mvt:if>
+                                                                        </div>
+                                        
+                                                                    <mvt:if expr="miva_array_find(l.settings:group:product_id,l.settings:saveditemsarr,0) LT 1">
+                                                                        <div>
+                                                                            <mvt:if expr="g.Basket:cust_id">
+                                        
+                                                                                <a class="font10 saveItemLater 2 <mvt:if expr='(l.settings:load_customer:account_id EQ 1 AND l.settings:taxId) OR g.accountType EQ "Non-Profit"'>hidden</mvt:if>"
+                                                                            style="color: #628e83;cursor:pointer;font-size: 12px;"
+                                                                            data-code="&mvt:group:product_id;-&mvt:group:price;-&mvt:cproduct:id;" data-groupid
+                                                                            ="&mvte:group:group_id;" data-product-parentid="&mvt:group:product_id;"
+                                                                            data-productprice="&mvt:group:code;=&mvt:group:price;">Save for
+                                                                            later
+                                                                </a>
+                                                                <mvt:else>
+                                                                    <a class="font10 checkoutloginsaveforlater"
+                                                                        style="color: #628e83;cursor:pointer;font-size: 12px;">Save
+                                                                        for later</a>
+                                                            </mvt:if>
+                                                        </div>
+                                                    </mvt:if>
+                                                    <mvt:else>
+                                        
+                                                        <mvt:if expr="g.accountType EQ 'Non-Profit'">
+                                                            <div class="decpr non-profit">
+                                                                <mvt:if expr="l.settings:display_uom OR l.settings:display_uom NE ''">
+                                                                    &mvt:display_uom;
+                                                                    <mvt:else>
+                                                                        &mvt:uomvalue;
+                                                                </mvt:if>
+                                                        </mvt:if>
+                                            </div>
+                                        
+                                            </mvt:if>
+                                        
+                                            <div class="">
+                                                <mvt:if expr="l.settings:option:base_price">
+                                                    &mvt:option:formatted_base_price;
+                                                </mvt:if>
+                                            </div>
+                                            <div class="">
+                                                <mvt:if expr="l.settings:option:subtotal_base_price NE l.settings:option:subtotal">
+                                                    <span style="text-decoration: line-through;">&mvt:option:formatted_subtotal_base_price;</span>
+                                                </mvt:if>
+                                                <mvt:if expr="l.settings:option:subtotal">
+                                                    &mvt:option:formatted_subtotal;
+                                                </mvt:if>
+                                            </div>
+                                            </div>
+                                            <mvt:assign name="l.settings:ocounter" value="l.settings:ocounter+1" />
+                                            <mvt:if expr="l.settings:group.master_code">
+                                                <mvt:assign name="l.settings:wishlistlink"
+                                                    value="g.Secure_sessionurl$'Screen='$g.Screen$'&Action=ATWL&Product_Code='$l.settings:group:master_code$'&Product_Attributes%5B+1+%5D%3Acode='$l.settings:option:attr_code$'&Product_Attributes%5B1%5D%3Avalue='$l.settings:option:opt_code$'&Quantity=1'" />
+                                            </mvt:if>
+                                        </mvt:foreach>
+                                        <mvt:if expr="l.settings:ocounter LT 1">
+                                            <mvt:item name="customfields"
+                                                param="Read_Product_Code(l.settings:group:code, 'unit_size', l.settings:unit_size )" />
+                                            <mvt:item name="customfields"
+                                                param="Read_Product_Code(l.settings:group:code, 'pack_size', l.settings:packsizevalue )" />
+                                            <mvt:item name="customfields"
+                                                param="Read_Product_Code(l.settings:group:code, 'uom', l.settings:uomvalue )" />
+                                            <div class="options-row gray 2">
+                                                <mvt:if expr="l.settings:unit_size">
+                                                    <div class="decpr 3">
+                                                        &mvt:unit_size; 
+
+                                                        <mvt:if expr="l.settings:load_customer:account_id EQ 1 AND l.settings:taxId">
+                                                            <mvt:else>
+                                                            <mvt:item name="customfields" param="Read_Product_Code( l.settings:group:parent, 'heavy_weight_item', l.settings:heavy_weight_item )" />
+                                                                <mvt:if expr="l.settings:heavy_weight_item">
+                                                                    <span class="pointer" data-toggle="tooltip" data-placement="bottom" title="Heavy weight item, additional delivery fee may apply."> 
+                                                                        <span class="material-symbols-sharp txt-orange ft-16p vertical-center">weight</span>
+                                                                    </span>
+                                                                </mvt:if>
+                                                        </mvt:if>
+                                                        <mvt:if expr="g.accountType NE 'Non-Profit'">
+                                                            <mvt:else>
+                                                                <div class="decpr non-profit">
+                                                                    <mvt:if expr="l.settings:display_uom OR l.settings:display_uom NE ''">
+                                                                    &mvt:display_uom;
+                                                                    <mvt:else>
+                                                                        &mvt:uomvalue;
+                                                                </mvt:if>
+                                                                </div>
+                                                        </mvt:if>
+                                                    </div>
+                                                </mvt:if>
+                                                <mvt:if expr="l.settings:packsizevalue GT 1">
+                                                    <div class="decpr 4">
+                                                        <mvt:if expr="l.settings:uomvalue EQ 'Each'">
+                                                            &mvt:packsizevalue; &mvt:uomvalue;
+                                                            <mvt:else>
+                                                                &mvt:uomvalue; of &mvt:packsizevalue;
+                                                        </mvt:if>
+                                                    </div>
+
+                                                    <mvt:elseif expr="l.settings:packsizevalue EQ 1 AND g.accountType NE 'Non-Profit'">
+                                                        <div class="decpr packsize 2">
+                                                         <mvt:if expr="'mkt' CIN g.assigned_categories[1]:code  OR g.assigned_categories[1]:code EQ 'market' ">
+                                                        <mvt:item name="customfields"
+                                                                param="Read_Product_Code(l.settings:group:code, 'unit_size', l.settings:unit_sizeshow )" />
+                                                            <mvt:item name="customfields"
+                                                                param="Read_Product_Code(l.settings:group:code, 'display_uom', l.settings:display_uom )" />
+                                                                <mvt:if expr="l.settings:unit_sizeshow OR l.settings:unit_sizeshow NE ''">
+                                                                &mvt:unit_sizeshow;
+                                                                <mvt:else>
+                                                                    &mvt:display_uom;
+                                                            </mvt:if>
+                                                            <mvt:else>
+                                                        &mvt:packsizevalue; &mvt:uomvalue;
+                                                        </mvt:if>
+                                                        </div>
+                                                        <mvt:else>
+                                                    </mvt:if>
+                                                <mvt:if expr="miva_array_find(l.settings:group:product_id,l.settings:saveditemsarr,0) LT 1">
+                                                            <div>
+                                                                <mvt:if expr="g.Basket:cust_id">
+                                                                    <a class="font10 saveItemLater <mvt:if expr='(l.settings:load_customer:account_id EQ 1 AND l.settings:taxId)  OR g.accountType EQ "Non-Profit"'>hidden</mvt:if>"
+                                                                        style="color: #628e83;cursor:pointer;font-size: 13px;"
+                                                                        data-code="&mvt:group:product_id;-&mvt:group:price;-&mvt:cproduct:id;" data-groupid ="&mvte:group:group_id;" data-product-parentid="&mvt:group:product_id;" data-productprice="&mvt:group:code;=&mvt:group:price;">Save for
+                                                                        later</a>
+                                                                    <mvt:else>
+                                                                        <a class="font10 checkoutloginsaveforlater"
+                                                                            style="color: #628e83;cursor:pointer;font-size: 13px;">Save
+                                                                            for later</a>
+                                                                </mvt:if>
+                                                            </div>
+                                                        </mvt:if>
+                                             
+                                            </div>
+                                        </mvt:if>
+                                        <!-- todo -->
+                                        <mvt:if expr='l.settings:load_customer:account_id EQ 1 AND l.settings:taxId'>
+                                            <mvt:if expr="l.settings:giftbox_check EQ 'yes' OR l.settings:giftbox_check EQ 1 "> 
+                                                <p class="ft-10p txt-orange ft-md">
+                                                    Please Note: This box requires 24 hours notice, after which it will be delivered on your next delivery date.
+                                                </p>
+                                            </mvt:if>
+                                        </mvt:if>
+
+                                        <mvt:foreach iterator="discount" array="group:discounts">
+                                            <mvt:if expr="l.settings:discount:display">
+                                                <MVT:COMMENT>
+                                                    <div class="item-discount">
+                                                        &mvt:discount:descrip;: &mvt:discount:formatted_discount;
+                                                    </div>
+                                                </MVT:COMMENT>
+                                            </mvt:if>
+                                            <Mvt:ASSIGN Name="g.basketDiscount"
+                                                Value="g.basketDiscount+l.settings:discount:discount" />
+
+
+                                                <mvt:foreach iterator="discount" array="group:discounts">
+                                                    <mvt:if expr="l.settings:discount:display">
+                                                        <mvt:if expr=" 'Threebies' CIN l.settings:discount:descrip">
+                                                            <mvt:assign name="g.item3BDiscountTotal" value="g.item3BDiscountTotal+l.settings:discount:discount" />
+                                                            <mvt:else>
+                                                                <mvt:assign name="g.otherSavingsweb" value="g.otherSavingsweb+l.settings:discount:discount" />
+                                                        </mvt:if>
+                                                    </mvt:if>
+                                                </mvt:foreach>
+
+                                        </mvt:foreach>
+
+                                        
+
+
+                                        <mvt:item name="customfields" param="Read_Customer_ID(g.Basket:Cust_id, 'tax_id_number', l.settings:taxId)" />
+                                        <mvt:item name="customfields" param="Read_Product_ID(l.settings:group:product_id, 'retail_only_Items', l.settings:retailonly )" />
+                                        <mvt:if expr="l.settings:inventory LT 0">
+
+                                            <mvt:if expr="l.settings:load_customer:account_id EQ 1 AND l.settings:taxId AND l.settings:taxId AND (l.settings:retailonly EQ 1 OR l.settings:retailonly EQ 'yes') ">                                               
+                                            <mvt:else>
+					    <mvt:if expr="g.accountType NE 'Non-Profit'">
+                                            <input type="hidden" name="inventoryCnt" class="inventoryCnt" value=true />
+                                            <p style="color:red;font-size:10px;">We don't have sufficient inventory for this item. Please adjust accordingly.</p>
+</mvt:if>
+                                        </mvt:if>
+                                    </mvt:if>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-7 paddingZero  ">
+                        <div class="col-xs-12 tab-margin-zero"
+                            style="padding: 8px 16px"><mvt:comment> #613 </mvt:comment>
+                            <mvt:item name="customfields"
+                                param="Read_Product_ID( l.settings:group:product_id, 'maxqty', l.settings:maxqty)" />
+                            <div class="col-xs-12 col-lg-3 visible-xs paddingZero" style=""><mvt:comment> #613 </mvt:comment>
+                                <div style="display: flex;">
+
+                                    <div class="gnaehs col-xs-2 mob-nopadding">
+                                        <mvt:assign name="l.uri:store_id" value="g.Store:id" />
+                                        <mvt:assign name="l.uri:product_id" value="l.settings:pproduct:id" />
+                                        <mvt:do file="g.Module_Feature_URI_DB" name="l.have_uri"
+                                            value="URI_Load_Item_Canonical( l.uri, l.settings:pproduct_uri )" />
+                                        <mvt:if expr="l.have_uri">
+                                            <mvt:assign name="l.settings:pproduct:link"
+                                                value="l.settings:pproduct_uri:uri" />
+                                        </mvt:if>
+                                        <div class="image-wrapper" style="position:relative;">
+                                            <mvt:item name="216_MonkeyWrench"
+                                                param="load-most-appropriate-image-for-basket-and-order-contents-product|basket|l.all_settings:group:line_id" />
+                                                <mvt:if expr="l.settings:contents_product_image EQ ''">
+                                                <mvt:assign name="l.settings:contents_product_image" value="'graphics/00000001/3/ComingSoon-MW_530x530.jpg'" />
+                                                </mvt:if>
+                                            <mvt:if expr="l.settings:pproduct">
+                                                <a href=/prod.html?product_code=&mvt:group:parent;"><img data-src="&mvt:contents_product_image;" src="&mvt:contents_product_image;"
+                                                        alt="&mvt:group:name;" title="&mvt:group:name;"
+                                                        class="image-responsive" /></a>
+                                                <mvt:else>
+                                                    <mvt:if expr="len(l.settings:master_product_code)">
+                                                        <a href="&mvt:group:link;"><img
+                                                                data-src="&mvt:contents_product_image;" src="&mvt:contents_product_image;"
+                                                                alt="&mvt:group:name;" title="&mvt:group:name;"
+                                                                class="image-responsive" /></a>
+                                                        <mvt:else>
+                                                            <a href="&mvt:group:link;"><img
+                                                                    data-src="&mvt:contents_product_image;" src="&mvt:contents_product_image;"
+                                                                    alt="&mvt:group:name;" title="&mvt:group:name;"
+                                                                    class="image-responsive" /></a>
+                                                    </mvt:if>
+                                            </mvt:if>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-9 col-lg-9"><mvt:comment>#613</mvt:comment>
+                                        <div class="">
+                                            <mvt:if expr="l.settings:pproduct">
+                                                <a href="/prod.html?product_code=&mvt:group:parent;" class="prodnamelink">
+                                                    <div class="item-name mb-ft-14p ft-md ltr-sp-0p5">
+                                                        &mvt:group:name; <mvt:if expr="l.settings:brand NE '' ">by &mvt:brand; </mvt:if>
+                                                    </div>
+                                                    <mvt:if expr="l.settings:basketnofedexcheck">
+                                                                            <span class="ft-demi ft-10p txt-orange"><br/>This item is unavailable to ship via Fedex. Please check available shipping options</span>
+                                                                        </mvt:if>
+                                                </a>
+                                                <mvt:if expr="g.Basket:Cust_ID">
+                                                    <mvt:item name="wlprodcount" param="l.all_settings:pproduct:id" />
+                                                    <a href="javascript:;" class="addFav <mvt:if expr="
+                                                        g.wltotalprodcount GT 0">removeWishlist
+                                                        <mvt:else>
+                                                            addWishlist
+                                                </mvt:if>"data-wishlist="&mvt:pproduct:id;"
+                                                data-wishlistid="&mvt:wishlist[1]:id;"
+                                                data-code="&mvt:pproduct:code;" data-sku="&mvt:group:code;"
+                                                style="display:none">
+                                                <i class="fa <mvt:if expr=" g.wltotalprodcount GT 0">fa-heart<mvt:else>
+                                                        fa-heart-o
+                                            </mvt:if>"></i>
+                                            </a>
+                                            <mvt:else>
+                                                <a href="javascript:;" class="addFav retailaddFav"
+                                                    data-page="&mvt:global:Screen;" data-search="&mvt:global:search;"
+                                                    data-ctgy="&mvt:global:Category_Code;"
+                                                    data-prod="&mvt:global:Product_Code;" style="display:none">
+                                                    <i class="fa fa-heart-o"></i>
+                                                </a>
+                                                </mvt:if>
+                                                <mvt:else>
+                                                    <mvt:if expr="len(l.settings:master_product_code)">
+                                                        <a href="&mvt:group:link;">
+                                                            <div class="item-name hidden-xs">
+                                                                &mvt:group:name;
+                                                            </div>
+                                                            <mvt:if expr="l.settings:basketnofedexcheck">
+                                                                            <span class="ft-demi ft-10p txt-orange"><br/>This item is unavailable to ship via Fedex. Please check available shipping options</span>
+                                                                        </mvt:if>
+                                                        </a>
+                                                        <mvt:else>
+                                                            <a href="&mvt:group:link;">
+                                                                <div class="item-name hidden-xs">
+                                                                    &mvt:group:name;
+                                                                </div>
+                                                                <mvt:if expr="l.settings:basketnofedexcheck">
+                                                                            <span class="ft-demi ft-10p txt-orange"><br/>This item is unavailable to ship via Fedex. Please check available shipping options</span>
+                                                                        </mvt:if>
+                                                            </a>
+                                                    </mvt:if>
+                                                    </mvt:if>
+                                                    <mvt:assign name="l.settings:wishlistlink"
+                                                        value="g.Secure_sessionurl$'Screen='$g.Screen$'&Action=ATWL&Product_Code=' $ l.settings:group:code$ '&Quantity=1'" />
+                                                    <mvt:assign name="l.groupPriceAffectedByOptions" value="'false'" />
+                                                    <mvt:assign name="l.settings:ocounter" value="0" />
+                                                    <mvt:foreach iterator="option" array="group:options">
+                                                        <div class="options-row gray 3 attributes-gap">
+                                                            <div class="decpr txt-gray mb-ft-10p ft-md"><mvt:comment> #613</mvt:comment>
+                                                                <mvt:assign name="l.settings:option:attr_prompt"
+                                                                    value="glosub(l.settings:option:attr_prompt,'Select ','')" />
+                                                                <mvt:if expr="l.settings:option:option_id">
+                                                                    &mvt:option:opt_prompt;
+                                                                    <mvt:elseif
+                                                                        expr="NOT ISNULL l.settings:option:data">
+                                                                        &mvt:option:data;
+                                                                        <mvt:elseif
+                                                                            expr="NOT ISNULL l.settings:option:data_long">
+                                                                            &mvt:option:data_long;
+                                                                            <mvt:else>
+                                                                                &mvt:option:attr_prompt;
+                                                                </mvt:if>
+                                                                <mvt:foreach iterator="discount"
+                                                                    array="option:discounts">
+                                                                    <mvt:if expr="l.settings:discount:display">
+                                                                        <MVT:COMMENT>
+                                                                            <div class="item-discount">
+                                                                                &mvt:discount:descrip;:
+                                                                                &mvt:discount:formatted_discount;
+                                                                            </div>
+                                                                        </MVT:COMMENT>
+                                                                    </mvt:if>
+                                                                    <Mvt:ASSIGN Name="g.basketDiscount"
+                                                                        Value="g.basketDiscount+l.settings:discount:discount" />
+                                                                </mvt:foreach>
+                                                            </div>
+                                                            <mvt:item name="customfields"
+                                                param="Read_Product_Code(l.settings:group:code, 'unit_size', l.settings:unit_size )" />
+                                                    <mvt:if expr="l.settings:unit_size">
+                                                    <div class="decpr 3">
+                                                        &mvt:unit_size; 
+
+                                                        <mvt:if expr="l.settings:load_customer:account_id EQ 1 AND l.settings:taxId">
+                                                            <mvt:else>
+							                                <mvt:item name="customfields" param="Read_Product_Code( l.settings:group:parent, 'heavy_weight_item', l.settings:heavy_weight_item )" />
+                                                                <mvt:if expr="l.settings:heavy_weight_item">
+                                                                    <span class="pointer" data-toggle="tooltip" data-placement="bottom" title="Heavy weight item, additional delivery fee may apply."> 
+                                                                        <span class="material-symbols-sharp txt-orange ft-16p vertical-center">
+weight
+</span>
+                                                                    </span>
+                                                                </mvt:if>
+                                                        </mvt:if>
+                                                    </div>
+                                                </mvt:if>
+                                                            <mvt:item name="customfields"
+                                                                param="Read_Product_Code(l.settings:group:code, 'pack_size', l.settings:packsizevalue )" />
+                                                            <mvt:item name="customfields"
+                                                                param="Read_Product_Code(l.settings:group:code, 'uom', l.settings:uomvalue )" />
+                                                            <mvt:if expr="l.settings:packsizevalue GT 1">
+                                                                <div class="decpr txt-gray mb-ft-10p ft-md">
+                                                                    <mvt:if expr="l.settings:uomvalue EQ 'Each'">
+                                                                        &mvt:packsizevalue; &mvt:uomvalue;
+                                                                        <mvt:else>
+                                                                            &mvt:uomvalue; of &mvt:packsizevalue;
+                                                                    </mvt:if>
+                                                                </div>
+
+                                                                <mvt:if expr="miva_array_find(l.settings:group:product_id,l.settings:saveditemsarr,0) LT 1">
+                                                                    <div> 
+                                                                        <a class="decpr font10 saveItemLater <mvt:if expr='(l.settings:load_customer:account_id EQ 1 AND l.settings:taxId) OR g.accountType EQ "Non-Profit"'>hidden</mvt:if>"
+                                                                            style="color: #628e83;cursor:pointer;font-size: 13px;"
+                                                                            data-code="&mvt:group:product_id;-&mvt:group:price;-&mvt:cproduct:id;" data-groupid ="&mvte:group:group_id;" data-product-parentid="&mvt:group:product_id;" data-productprice="&mvt:group:code;=&mvt:group:price;">Save for
+                                                                            later</a>
+                                                                    </div>
+                                                                </mvt:if>
+                                                                <mvt:elseif expr="l.settings:packsizevalue EQ 1 AND g.accountType NE 'Non-Profit'">
+                                                                    <div class="decpr packsize 3 txt-gray mb-ft-10p ft-md">&mvt:packsizevalue;
+                                                                        &mvt:uomvalue;
+                                                                    </div>
+
+
+                                                                    <mvt:else>
+                                                            </mvt:if>
+                                                            <div class="">
+                                                                <mvt:if expr="l.settings:option:base_price">
+                                                                    &mvt:option:formatted_base_price;
+                                                                </mvt:if>
+                                                            </div>
+                                                            <div class="">
+                                                                <mvt:if
+                                                                    expr="l.settings:option:subtotal_base_price NE l.settings:option:subtotal">
+                                                                    <span
+                                                                        style="text-decoration: line-through;">&mvt:option:formatted_subtotal_base_price;</span>
+                                                                </mvt:if>
+                                                                <mvt:if expr="l.settings:option:subtotal">
+                                                                    &mvt:option:formatted_subtotal;
+                                                                </mvt:if>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <mvt:assign name="l.settings:ocounter"
+                                                            value="l.settings:ocounter+1" />
+                                                        <mvt:if expr="l.settings:group.master_code">
+                                                            <mvt:assign name="l.settings:wishlistlink"
+                                                                value="g.Secure_sessionurl$'Screen='$g.Screen$'&Action=ATWL&Product_Code='$l.settings:group:master_code$'&Product_Attributes%5B+1+%5D%3Acode='$l.settings:option:attr_code$'&Product_Attributes%5B1%5D%3Avalue='$l.settings:option:opt_code$'&Quantity=1'" />
+                                                        </mvt:if>
+                                                    </mvt:foreach>
+                                                    <mvt:if expr="l.settings:ocounter LT 1">
+                                                        <mvt:item name="customfields"
+                                                            param="Read_Product_Code(l.settings:group:code, 'unit_size', l.settings:unit_size )" />
+                                                        <mvt:item name="customfields"
+                                                            param="Read_Product_Code(l.settings:group:code, 'pack_size', l.settings:packsizevalue )" />
+                                                        <mvt:item name="customfields"
+                                                            param="Read_Product_Code(l.settings:group:code, 'uom', l.settings:uomvalue )" />
+                                                        <div class="options-row gray 4 attributes-gap">
+                                                            <mvt:if expr="l.settings:unit_size">
+                                                                <div class="decpr 01">
+                                                                    &mvt:unit_size;
+                                                        <mvt:if expr="l.settings:load_customer:account_id EQ 1 AND l.settings:taxId">
+                                                            <mvt:else>
+							  <mvt:item name="customfields" param="Read_Product_Code( l.settings:group:parent, 'heavy_weight_item', l.settings:heavy_weight_item )" />
+                                                                <mvt:if expr="l.settings:heavy_weight_item">
+                                                                    <span class="pointer" data-toggle="tooltip" data-placement="bottom" title="Heavy weight item, additional delivery fee may apply."> 
+                                                                        <span class="material-symbols-sharp txt-orange ft-16p vertical-center">
+weight
+</span>
+                                                                    </span>
+                                                                </mvt:if>
+                                                        </mvt:if>
+                                                                </div>
+                                                            </mvt:if>
+
+
+
+                                                            <mvt:if expr="l.settings:packsizevalue GT 1">
+                                                                <div class="decpr 02">
+                                                                    <mvt:if expr="l.settings:uomvalue EQ 'Each'">
+                                                                        &mvt:packsizevalue; &mvt:uomvalue;
+                                                                        <mvt:else>
+                                                                            &mvt:uomvalue; of &mvt:packsizevalue;
+                                                                    </mvt:if>
+                                                                </div>
+                                                                <mvt:elseif expr="l.settings:packsizevalue EQ 1 AND g.accountType NE 'Non-Profit'">
+                                                                    <div class="decpr packsize 4">
+                                                                    <mvt:if expr="'mkt' CIN g.assigned_categories[1]:code  OR g.assigned_categories[1]:code EQ 'market' ">
+                                                        <mvt:item name="customfields"
+                                                                param="Read_Product_Code(l.settings:group:code, 'unit_size', l.settings:unit_sizeshow )" />
+                                                            <mvt:item name="customfields"
+                                                                param="Read_Product_Code(l.settings:group:code, 'display_uom', l.settings:display_uom )" />
+                                                                <mvt:if expr="l.settings:unit_sizeshow OR l.settings:unit_sizeshow NE ''">
+                                                                &mvt:unit_sizeshow;
+                                                                <mvt:else>
+                                                                    &mvt:display_uom;
+                                                            </mvt:if>
+                                                            <mvt:else>
+                                                        &mvt:packsizevalue; &mvt:uomvalue;
+                                                        </mvt:if>
+                                                                    </div>
+<mvt:comment>#613
+                                                                    <mvt:if
+                                                                        expr="miva_array_find(l.settings:group:product_id,l.settings:saveditemsarr,0) LT 1">
+                                                                        <div>
+                                                                            <mvt:if expr="g.Basket:cust_id"> 
+                                                                                <a class="font10 saveItemLater <mvt:if expr='l.settings:load_customer:account_id EQ 1 AND l.settings:taxId'>hidden</mvt:if>"
+                                                                                    style="color: #628e83;cursor:pointer;font-size: 13px"
+                                                                                    data-code="&mvt:group:product_id;-&mvt:group:price;-&mvt:cproduct:id;" data-groupid ="&mvte:group:group_id;" data-product-parentid="&mvt:group:product_id;" data-productprice="&mvt:group:code;=&mvt:group:price;">Save
+                                                                                    for later
+                                                                                </a>
+                                                                                <mvt:else> 
+                                                                                    <a class="font10 checkoutloginsaveforlater "
+                                                                                        style="color: #628e83;cursor:pointer;font-size: 13px;">Save
+                                                                                        for later</a>
+                                                                            </mvt:if>
+                                                                        </div>
+                                                                    </mvt:if>
+#613</mvt:comment>
+                                                                    <mvt:else>
+                                                            </mvt:if>
+                                                        </div>
+                                                    </mvt:if>
+                                                    <!-- todo -->
+
+                                                    <mvt:foreach iterator="discount" array="group:discounts">
+                                                        <mvt:if expr="l.settings:discount:display">
+                                                            <MVT:COMMENT>
+                                                                <div class="item-discount">
+                                                                    &mvt:discount:descrip;:
+                                                                    &mvt:discount:formatted_discount;
+                                                                </div>
+                                                            </MVT:COMMENT>
+                                                        </mvt:if>
+                                                        <Mvt:ASSIGN Name="g.basketDiscount"
+                                                            Value="g.basketDiscount+l.settings:discount:discount" />
+                                                    </mvt:foreach>
+                                                    
+                                                    <mvt:item name="customfields" param="Read_Customer_ID(g.Basket:Cust_id, 'tax_id_number', l.settings:taxId)" />
+                                                    <mvt:item name="customfields" param="Read_Product_ID(l.settings:group:product_id, 'retail_only_Items', l.settings:retailonly )" />
+                                                    <mvt:if expr="l.settings:inventory LT 0">
+
+                                                        <mvt:if expr="l.settings:load_customer:account_id EQ 1 AND l.settings:taxId AND l.settings:taxId AND (l.settings:retailonly EQ 1 OR l.settings:retailonly EQ 'yes') ">
+                                                           
+                                                        <mvt:else>
+ <mvt:if expr="g.accountType NE 'Non-Profit'">
+                                                        <input type="hidden" name="inventoryCnt" class="inventoryCnt"
+                                                            value=true />
+                                                        <p style="color:red;font-size:10px;margin-left:4%;">We don't
+                                                            have sufficient inventory for
+                                                            this
+                                                            item.
+                                                            Please adjust accordingly.</p>
+                                                    </mvt:if>
+</mvt:if>
+                                                </mvt:if>
+                                        </div>
+                                    </div>
+                                </div>
+                                <mvt:item name="customfields" param="Read_Customer_ID(g.Basket:Cust_id, 'tax_id_number', l.settings:taxId)" />
+                                <mvt:item name="customfields" param="Read_Product_ID(l.settings:group:product_id, 'retail_only_Items', l.settings:retailonly )" />
+                                <mvt:if expr="l.settings:load_customer:account_id EQ 1 AND l.settings:taxId AND l.settings:taxId AND (l.settings:retailonly EQ 1 OR l.settings:retailonly EQ 'yes') ">
+                                    <h4 class="mar-bt-zero ft-18p visible-xs" style="font-weight: bold;font-family: 'ITCAvantGardePro-Bold';color: #628e83; float: right; margin: -30px 10px 0px 0px;">Item is not available</h4>
+                                </mvt:if>
+                                <div class="hidden-lg hidden-md hidden-sm visible-xs">
+                                    <mvt:if expr='l.settings:load_customer:account_id EQ 1 AND l.settings:taxId'>
+                                         <mvt:if expr="l.settings:giftbox_check EQ 'yes' OR l.settings:giftbox_check EQ 1 "> 
+                                            <div class="col-xs-2 visible-xs"></div>
+                                            <div class="col-xs-10 visible-xs note-gap">
+                                                <span class="ft-10p txt-orange ft-md ">
+                                                   Please Note: This box requires 24 hours notice, after which it will be delivered on your next delivery date.
+                                                </span>
+                                            </div>
+
+                                        </mvt:if>
+                                    </mvt:if>
+                                </div>
+                            </div>
+
+                            <mvt:comment>
+                            <div class="col-xs-1 col-sm-3 hidden-xs pd-lt-zero"
+                                style="text-align:center; display: flex;position:relative;display: flex;align-items: center;justify-content: center;">
+
+                                <label class="checkboxContainer displayPrintNone">
+                                    <input type="checkbox" name="allowsub" class="recipeCheck drecipeCheck"
+                                        data-code="&mvt:group:code;" <mvt:if
+                                        expr="miva_array_find(l.settings:group:code,l.settings:cart_substitutionsarr,0) GT 0">
+                                    checked</mvt:if>>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            </mvt:comment>
+                            <mvt:assign name="l.settings:wscartdisbledclass" value="''"/>   
+                            <mvt:item name="customfields" param="Read_Customer_ID(g.Basket:Cust_id, 'tax_id_number', l.settings:taxId)" />
+                            <mvt:item name="customfields" param="Read_Product_ID(l.settings:group:product_id, 'retail_only_Items', l.settings:retailonly )" />
+
+                            <mvt:if expr="l.settings:load_customer:account_id EQ 1 AND l.settings:taxId AND l.settings:taxId AND (l.settings:retailonly EQ 1 OR l.settings:retailonly EQ 'yes') ">
+                                <mvt:assign name="l.settings:wscartdisbledclass" value="'wscartdisbledclass'"/>                          
+                            </mvt:if>
+                        <div class="&mvt:wscartdisbledclass">
+                            <mvt:comment>
+                                <div class="col-xs-3 col-sm-2 txt-center font12 bold-ft visible-xs pd-zero mobtxtdisable hidden">
+                                    Allow Subs
+                                </div>
+                            </mvt:comment>
+<mvt:comment> added column to add save for later anc chenhed from col-xs-4 to col-xs-3 - #613  </mvt:comment>
+                            <div class="col-xs-2 visible-xs hidden-sm hidden-md hidden-lg">
+
+                            </div>
+<mvt:comment> added column to add save for later - #613 </mvt:comment>
+                            <div class="col-xs-3 col-sm-2 visible-xs mb-ft-12p ft-md txt-gray mobtxtdisable prie-gap"><mvt:comment>#613</mvt:comment>
+                                Price
+                            </div>
+                            <div class="col-xs-4 col-sm-2 txt-center mb-ft-12p ft-md txt-gray visible-xs mobtxtdisable qty-gap"><mvt:comment>#613</mvt:comment>
+                                Qty
+                            </div>
+
+                            <div class="col-xs-3 col-sm-2 txt-center mb-ft-12p ft-md txt-gray visible-xs mobtxtdisable subtotal subtotal-gap"><mvt:comment>#613</mvt:comment>
+                                Subtotal
+                            </div>
+                        </div>
+                            <mvt:comment><div class="col-xs-12 visible-xs">&nbsp;</div>     #613</mvt:comment>
+
+                        <mvt:comment>
+                            <div class="col-xs-3 col-sm-2 txt-center font12 priceloop visible-xs &mvt:wscartdisbledclass hidden">
+                                <div class="mblAllowSubs visible-xs form-group" style="z-index: 99;">
+
+                                        <input type="checkbox" name="allowsub"
+                                            class="recipeChecks mrecipeCheck" id="allow-sub-mobile-&mvt:group:code;"
+                                            data-code="&mvt:group:code;" <mvt:if
+                                            expr="miva_array_find(l.settings:group:code,l.settings:cart_substitutionsarr,0) GT 0">
+                                        checked</mvt:if>>
+                                        <label for="allow-sub-mobile-&mvt:group:code;" class="checkboxContainers displayPrintNone mr-bt-2r"style=""> </label>
+                                </div>
+                            </div>
+                        </mvt:comment>
+			     <div class="col-xs-2 visible-xs hidden-lg hidden-md hidden-sm mob-nopadding" > <mvt:comment > #613</mvt:comment>
+                    <mvt:if
+                    expr="miva_array_find(l.settings:group:product_id,l.settings:saveditemsarr,0) LT 1">
+                    <div style="width:100px 2">
+                        <mvt:if expr="g.Basket:cust_id"> 
+                            <a class="mb-ft-10p ft-md mob-nopadding saveItemLater <mvt:if expr='(l.settings:load_customer:account_id EQ 1 AND l.settings:taxId) OR g.accountType EQ "Non-Profit"'>hidden</mvt:if>"
+                                style="color: #628e83;cursor:pointer;"
+                                data-code="&mvt:group:product_id;" data-groupid ="&mvte:group:group_id;">Save
+                                for later
+                            </a>
+                            <mvt:else> 
+                                <a class="mb-ft-10p ft-md mob-nopadding checkoutloginsaveforlater"
+                                    style="color: #628e83;cursor:pointer;">Save
+                                    for later</a>
+                        </mvt:if>
+                    </div>
+                </mvt:if>
+                 </div> <mvt:comment > #613</mvt:comment>
+                            <div class="col-xs-3 col-sm-3 font12 priceloop"><mvt:comment > #613</mvt:comment>
+                                <mvt:if expr="l.settings:group:base_price GT l.settings:group:price">
+					<mvt:if expr="g.Basket:cust_id AND l.settings:load_customer:account_id EQ 1 AND l.settings:taxId">
+					<mvt:else>
+                                    <span>
+                                        <mvt:assign name="l.settings:item3BDiscount" value="0" />
+                                           
+                                        <mvt:if expr="(l.settings:iscartproductThreebie EQ 'Yes' OR l.settings:iscartproductThreebie EQ 'yes')  OR (l.settings:iscartmarketproductThreebie EQ 'Yes' OR l.settings:iscartmarketproductThreebie EQ 'yes') OR (g.checkformixproductsincart EQ 'eligibleformix')">
+                                            <!-- Check for 3b discount -->
+                                            <mvt:assign name="l.settings:item3BDiscount" value="l.settings:group:base_price - l.settings:group:price" />
+                                            <mvt:comment><mvt:assign name="g.item3BDiscountTotal" value="g.item3BDiscountTotal+(l.settings:item3BDiscount*l.settings:group:quantity)" /></mvt:comment>
+                                             <!-- Check for 3b discount -->
+                                             <mvt:if expr="g.fr_qtyincart GE 3 AND g.checkformixproductsincart NE 'eligibleformix'">
+                                                <strike class="ft-10p priceslash-&mvt:group:code;" style="position: absolute;top: -1.3em;left: 50%;transform: translate(-50%, 0);color: #777;">
+                                                    <span class="threebiecart-actualprice ft-10p txt-orange">&mvt:group:formatted_base_price;</span>
+                                                    <!-- <span class="threebiecart-actualprice ft-10p txt-orange">$&mvt:item3BDiscount;</span> -->
+                                                </strike>
+                                                <mvt:else>
+                                                <mvt:if expr="g.checkformixproductsincart EQ 'eligibleformix'">
+                                                <em class="ft-10p" style="position: absolute;top: -1.3em;left: 50%;transform: translate(-50%, 0);color: #777;">
+                                                    <span class="threebiecart-actualprice ft-10p txt-orange">$&mvt:item3BDiscount;</span>
+                                                </em>
+                                                </mvt:if>
+                                            </mvt:if>
+                                            <em><span class="cart-actualprice hidden">&mvt:group:formatted_base_price;</span></em>
+                                            <mvt:else>
+
+                                        <strike class="ft-10p priceslash-&mvt:group:code;" 
+                                            style="position: absolute;top: -1.3em;left: 50%;transform: translate(-50%, 0);color: #777;">
+                                            <em><span class="cart-actualprice">&mvt:group:formatted_base_price;</span></em>
+                                        </strike>
+                                    </mvt:if>
+                                   <!-- this is qty in cart &mvt:group:quantity; this is qty in cart -->
+                                    </span>
+                                    
+					</mvt:if>
+                                </mvt:if>
+                                <span class="pricechanges oldprice-&mvt:group:code; ft-10p" style="position: absolute;top: -1.3em;left: 50%;transform: translate(-50%, 0);color: #777; text-decoration:line-through;"><el></el></span>
+                               <span class="totalamt ft-md ft-14p" data-product-code="&mvt:group:code;" data-product-price="&mvt:group:price;" data-product-catchweight="&mvt:catch_weight;"> &mvt:group:formatted_price; </span><mvt:comment>#613</mvt:comment>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-5 col-lg-4 prodQty paddingZeros qtyContainer" ><mvt:comment > #613</mvt:comment>
+                                <mvt:if expr="l.settings:group:upsold">
+                                    &mvt:group:quantity;
+                                    <mvt:else>
+                                        <form method="post" action="&mvte:global:sessionurl;"
+                                            class="basket-page-quantity-update-form">
+                                            <mvt:assign name="l.settings:frqtyincart" value="0" />
+                                        <mvt:if expr="g.fr_qtyincart GT 0">
+                                            <mvt:assign name="l.settings:frqtyincart" value="g.fr_qtyincart" />
+                                        </mvt:if>
+                                            <input type="hidden" name="Action" value="QTYG" />
+                                            <input type="hidden" name="Screen" value="BASK" />
+                                            <input type="hidden" name="Basket_Group" value="&mvte:group:group_id;" />
+                                            <input type="hidden" name="Old_Screen" value="BASK" />
+                                            <input type="hidden" name="Offset" value="&mvte:global:Offset;" />
+                                            <input type="hidden" name="AllOffset" value="&mvte:global:AllOffset;" />
+                                            <input type="hidden" name="CatListingOffset"
+                                                value="&mvte:global:CatListingOffset;" />
+                                            <input type="hidden" name="RelatedOffset"
+                                                value="&mvte:global:RelatedOffset;" />
+                                            <input type="hidden" name="SearchOffset"
+                                                value="&mvte:global:SearchOffset;" />
+                                                <mvt:assign NAME="l.settings:pproduct:inv_available_raw" value="l.settings:pproduct:inv_available" />
+                                            <div class="qtyboxMain">
+                                                <div class="custom-number-input inputBox" style="
+                                                    display:-webkit-flex;
+                                                    display: flex;
+                                                    width: 100%;
+                                                    justify-content: space-between;">
+                                                    <input type="button" value="-" class="button-minus noborder nobg ft-14p bold-ft" onclick="changeBasketQty(this, '-')" data-field="quantity">
+                                                    <input type="tel" name="Quantity"
+                                                        style="border: none;width: inherit;background:no-repeat;padding:2px;"
+                                                        class="textfield basket-qty-input qtyboxs bold-ft"
+                                                        value="&mvt:group:quantity;" data-parent="&mvt:group:parent;"
+                                                        data-stock="&mvt:inventory;" data-stock-raw="&mvt:pproduct:inv_available_raw;" data-uom="&mvt:uomvalue;" data-cart-uom="&mvt:uomvalue;" data-min="&mvt:minqty;" data-qtyincart="&mvt:frqtyincart;" data-market-qtyincart="&mvt:group:quantity;" data-cartthreebie="&mvt:iscartproductThreebie;" data-cartmarketthreebie="&mvt:iscartmarketproductThreebie;" data-baskpricegroup="&mvt:bask_price_group;" data-cartproductcode="&mvt:group:code;" <mvt:if expr="l.settings:group:uomvalue EQ 'KIT'"> readonly </mvt:if> data-bask-addedqty="&mvt:group:quantity;" onchange="changeBasketQtyusingInput(this)" onkeypress="return isNumber(event);"  maxlength="4"/>
+                                                    <div class='upDownArrows'>
+                          
+                                                    </div>
+                                                    <input type="button" value="+" class="button-plus noborder nobg ft-14p bold-ft" onclick="changeBasketQty(this, '+')" data-field="quantity">
+                                                </div>
+                            <a href="&mvte:global:sessionurl;Action=RGRP&Screen=BASK&Basket_Group=&mvte:group:group_id;&Offset=&mvte:global:Offset;&AllOffset=&mvte:global:AllOffset;&CatListingOffset=&mvte:global:CatListingOffset;&RelatedOffset=&mvte:global:RelatedOffset;&SearchOffset=&mvte:global:SearchOffset;"
+                                class="remove-item"
+                                style="position: absolute;top: -1.65em;left: 50%;transform: translate(-50%,0);">
+                               
+                            </a>
+                                </div>
+
+                        </form>
+                        </mvt:if>
+                                <div class="threebiebtncontainer">
+                                    <form method="post" action="&mvte:global:sessionurl;"
+                                            class="basket-page-quantity-update-form cartforms-&mvt:group:code;">
+                                            <mvt:assign name="l.settings:frqtyincart" value="0" />
+                                        <mvt:if expr="g.fr_qtyincart GT 0">
+                                            <mvt:assign name="l.settings:frqtyincart" value="g.fr_qtyincart" />
+                                        </mvt:if>
+                                            <input type="hidden" name="Action" value="QTYG" />
+                                            <input type="hidden" name="Screen" value="BASK" />
+                                            <input type="hidden" name="Basket_Group" value="&mvte:group:group_id;" />
+                                            <input type="hidden" name="Old_Screen" value="BASK" />
+                                            <input type="hidden" name="Offset" value="&mvte:global:Offset;" />
+                                            <input type="hidden" name="AllOffset" value="&mvte:global:AllOffset;" />
+                                            <input type="hidden" name="CatListingOffset"
+                                                value="&mvte:global:CatListingOffset;" />
+                                            <input type="hidden" name="RelatedOffset"
+                                                value="&mvte:global:RelatedOffset;" />
+                                            <input type="hidden" name="SearchOffset"
+                                                value="&mvte:global:SearchOffset;" />
+                                                <mvt:assign NAME="l.settings:pproduct:inv_available_raw" value="l.settings:pproduct:inv_available" />
+                                            <div class="qtyboxMains hidden">
+                                                <div class="custom-number-input inputBox hidden" style="
+                                                    display:-webkit-flex;
+                                                    display: flex;
+                                                    width: 100%;
+                                                    justify-content: space-between;">
+                                                    <input type="hidden" name="Quantity"
+                                                    style="border: none;font-weight:bold;font-size: 16px;width: inherit;height:24px;background:no-repeat;"
+                                                    class="textfield basket-qty-input qtybox txt-center"
+                                                    value="&mvt:group:quantity;" data-parent="&mvt:group:parent;"
+                                                    data-stock="&mvt:inventory;" data-stock-raw="&mvt:pproduct:inv_available_raw;" data-mini-uom="&mvt:uomvalue;"  data-min="&mvt:minqty;" data-threebie="&mvt:isproductThreebie;" data-miniproductcode="&mvt:group:code;" readonly/>
+                                                    <input type="button" value="+" class="button-plus noborder nobg ft-16p bold-ft qtybtns hidden" onclick="changeBasketQty(this, '+')" data-field="quantity">
+                                                </div>
+                                                </div>
+                                <mvt:if expr="g.accountType EQ 'Non-Profit'">
+                                <mvt:else>
+                                <mvt:if expr="l.settings:iscartmarketproductThreebie EQ 'Yes'">
+
+                                <mvt:if expr="l.settings:group:quantity LT 3">
+                                <button type="button" name="threebiebtnincart" class="btn primary-btn threebiebtnincart threebiebtnincart-&mvt:group:code; ft-12p" data-cartproductcode="&mvt:group:code;" data-qty="&mvt:group:quantity;" style="display: none;" onclick="CartThreebietoCart(this);"><div>Add 1 , Save 10% </div></button>
+                                </mvt:if>
+
+                                <mvt:elseif expr="l.settings:iscartproductThreebie EQ 'Yes'">
+                                <mvt:if expr="g.fr_qtyincart LT 3">
+                                <button type="button" name="threebiebtnincart" class="btn primary-btn threebiebtnincart threebiebtnincart-&mvt:group:code; ft-12p" data-cartproductcode="&mvt:group:code;" data-qty="&mvt:group:quantity;" style="display: none;" onclick="CartThreebietoCart(this);"><div>Add 1 , Save 10% </div></button>
+                                </mvt:if>
+
+                                </mvt:if>
+                                </mvt:if>
+
+                                
+
+
+                                </form>
+                                </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-7 txt-center font12 priceloop nopaddingleft"><mvt:comment > #613</mvt:comment>
+                        <div class="msubtotal txt-right">
+                            <span class="psubtotal ft-md ft-14p">&mvt:group:formatted_subtotal;</span><mvt:comment>#613</mvt:comment>
+                        </div>
+                         
+                    </div>
+                    <mvt:item name="customfields" param="Read_Customer_ID(g.Basket:Cust_id, 'tax_id_number', l.settings:taxId)" />
+                    <mvt:item name="customfields" param="Read_Product_ID(l.settings:group:product_id, 'retail_only_Items', l.settings:retailonly )" />
+                    <div class="col-xs-1 col-sm-1 col-lg-2 txt-right closeprod pd-lt-zero ">
+                        <a href="&mvte:global:sessionurl;Action=RGRP&Screen=BASK&Basket_Group=&mvte:group:group_id;&Offset=&mvte:global:Offset;&AllOffset=&mvte:global:AllOffset;&CatListingOffset=&mvte:global:CatListingOffset;&RelatedOffset=&mvte:global:RelatedOffset;&SearchOffset=&mvte:global:SearchOffset;"
+                            class="remove-item1 &mvt:removewineitem; &mvt:global:isUserAccountisWineClass;" data-remove="&mvte:group:group_id;" data-psku="&mvt:group:sku;" data-pname="&mvt:group:name;" data-prbrand="&mvt:group:brand;" data-psubtotal="&mvt:group:formatted_subtotal;" data-pcode="&mvt:group:code;" data-pquantity="&mvt:group:quantity;">
+                            <mvt:if expr="l.settings:load_customer:account_id EQ 1 AND l.settings:taxId AND l.settings:taxId AND (l.settings:retailonly EQ 1 OR l.settings:retailonly EQ 'yes') ">
+                                <span class="material-icons" style="color: #f47a44;">highlight_off</span>
+                                <mvt:else>
+                                <span class="material-icons grey-lighter-1">highlight_off</span>
+                            </mvt:if>
+                        </a>
+                       
+                    </div>
+
+                </div>
+
+
+                <div class="col-xs-12 visible-xs" style="z-index: -1;">&nbsp;</div>
+                <div class="visible-sm col-sm-12">&nbsp;</div>
+        </div>
+
+        <mvt:item name="customfields" param="Read_Customer_ID(g.Basket:Cust_id, 'tax_id_number', l.settings:taxId)" />
+        <mvt:item name="customfields" param="Read_Product_ID(l.settings:group:product_id, 'retail_only_Items', l.settings:retailonly )" />
+        <mvt:if expr="l.settings:load_customer:account_id EQ 1 AND l.settings:taxId AND l.settings:taxId AND (l.settings:retailonly EQ 1 OR l.settings:retailonly EQ 'yes') ">
+
+            <h4 class="mar-bt-zero ft-16p hidden-xs" style="font-weight: bold;font-family: 'ITCAvantGardePro-Bold';color: #628e83; margin: unset; position: relative; left: 10%;">Item is not available</h4>
+        </mvt:if>
+
+    </div>
+    </mvt:foreach>
+</div>
+</div>
+<div class="basket-header row"></div>
+</div>
+
