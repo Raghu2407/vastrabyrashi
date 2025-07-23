@@ -35,7 +35,7 @@ function App() {
             <main>
               <section>
                 <div className="container">
-                  <h1 className='mt-16  bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent tracking-tight drop-shadow-md animate-fadeIn'>Shop our collection</h1>
+                  <h1 className='mt-16  bg-gradient-to-r text-3xl font-bold text-4xl md:text-6xl font-extrabold from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent tracking-tight drop-shadow-md animate-fadeIn'>Shop our collection</h1>
                 </div>
                 <div className="container grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 mt-8">
                   {productList.map((product) => (
