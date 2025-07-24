@@ -6,7 +6,7 @@ const Navbar = () => {
         {/* Logo / Brand */}
         <div className="text-2xl font-bold flex items-center gap-2">
           <Link
-           to="/"><img src="/logo.png" alt="Logo" className="h-8 inline-block" /></Link>
+            to="/"><img src="/logo.png" alt="Logo" className="h-8 inline-block" /></Link>
         </div>
 
         {/* Desktop Search */}
@@ -58,7 +58,7 @@ const Navbar = () => {
         className="md:hidden hidden flex flex-col space-y-2 bg-gray-700 px-4 py-3"
       >
         <a href="#" className="block text-white hover:text-gray-300">Home</a>
-        <a href="#" className="block text-white hover:text-gray-300">About</a>
+        <Link to="/about" className="font-bold">About</Link>
         <a href="#" className="block text-white hover:text-gray-300">Services</a>
         <a href="#" className="block text-white hover:text-gray-300">Contact</a>
 
