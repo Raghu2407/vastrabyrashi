@@ -30,7 +30,7 @@ export default function Example() {
                             <span className="animate-wave">👋</span> Welcome to <span className="text-pink-600">Vastra by Rashi</span>
                         </h1>
                         <p class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-2xl font-semibold">
-                            Every Thread Tells a Story. Yours.
+                            Every Thread Tells Your Story. 
                         </p>
                         <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
                             Explore our curated collection of stylish, affordable ethnic wear for both men and women.
