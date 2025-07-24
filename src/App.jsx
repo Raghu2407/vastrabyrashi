@@ -4,6 +4,7 @@ import AboutUs from "./About.jsx";
 import NavigationBar from './components/Navbar.jsx';
 import Cards from './components/Cards.jsx';
 import productData from './data/products.json';
+import SearchPage from "./SearchPage.jsx";
 import './App.css';
 import { useEffect, useState } from 'react';
 import MainLayout from './components/MainLayout.jsx';
@@ -30,6 +31,7 @@ function App() {
       <NavigationBar />
       <Routes>
       <Route path="/about" element={<AboutUs />} />
+      <Route path="/search" element={<SearchPage />} />
         <Route
           path="/"
           element={
