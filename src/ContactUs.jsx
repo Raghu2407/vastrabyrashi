@@ -28,7 +28,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12 text-gray-800">
+    <div className="max-w-3xl mx-auto  py-12 text-gray-800">
       <h1 className="text-3xl font-bold text-center mb-4">Get in Touch with Vastra by Rashi</h1>
       <p className="text-center text-lg mb-10">
         We’re here to help you find the perfect fit — whether it's ethnic elegance or everyday comfort wear.
@@ -143,7 +143,7 @@ const ContactUs = () => {
 
           <button
             type="submit"
-            className="mt-4 bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
+            className="mt-4 bg-green-600 text-white  py-2 rounded hover:bg-green-700"
           >
             Submit & Contact on WhatsApp
           </button>
