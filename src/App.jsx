@@ -6,6 +6,7 @@ import Cards from './components/Cards.jsx';
 import productData from './data/products.json';
 import './App.css';
 import { useEffect, useState } from 'react';
+import MainLayout from './components/MainLayout.jsx';
 
 function App() {
   const [productList, setProductList] = useState([]);
@@ -33,6 +34,7 @@ function App() {
           path="/"
           element={
             <main>
+              <MainLayout />
               <section>
                 <div className="container">
                   <h1 className='mt-16  bg-gradient-to-r text-3xl font-bold text-4xl md:text-6xl font-extrabold from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent tracking-tight drop-shadow-md animate-fadeIn'>Shop our collection</h1>

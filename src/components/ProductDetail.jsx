@@ -10,31 +10,31 @@ const ProductDetail = () => {
 
   return (
     <div className="container mx-auto p-8">
-      <section class="py-8 bg-white md:py-16 ">
-        <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
-          <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
-            <div class="shrink-0 max-w-md lg:max-w-lg mx-auto">
-              <img class="w-full dark:hidden" src={product.image} alt="" />
-              <img class="w-full hidden dark:block" src={product.image} alt="" />
+      <section className="py-8 bg-white md:py-16 ">
+        <div className="max-w-screen-xl px-4 mx-auto 2xl:px-0">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
+            <div className="shrink-0 max-w-md lg:max-w-lg mx-auto">
+              <img className="w-full dark:hidden" src={product.image} alt="" />
+              <img className="w-full hidden dark:block" src={product.image} alt="" />
             </div>
 
-            <div class="mt-6 sm:mt-8 lg:mt-0">
+            <div className="mt-6 sm:mt-8 lg:mt-0">
               <h1
-                class="text-xl font-semibold text-gray-900 sm:text-2x"
+                className="text-xl font-semibold text-gray-900 sm:text-2x"
               >
                 {product.name}
               </h1>
-              <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
+              <div className="mt-4 sm:items-center sm:gap-4 sm:flex">
                 <p
-                  class="text-2xl font-extrabold text-gray-900 sm:text-3x"
+                  className="text-2xl font-extrabold text-gray-900 sm:text-3x"
                 >
                   ₹{product.price.toFixed(2)}
                 </p>
 
-                <div class="flex items-center gap-2 mt-2 sm:mt-0">
-                  <div class="flex items-center gap-1">
+                <div className="flex items-center gap-2 mt-2 sm:mt-0">
+                  <div className="flex items-center gap-1">
                     <svg
-                      class="w-4 h-4 text-yellow-300"
+                      className="w-4 h-4 text-yellow-300"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -47,7 +47,7 @@ const ProductDetail = () => {
                       />
                     </svg>
                     <svg
-                      class="w-4 h-4 text-yellow-300"
+                      className="w-4 h-4 text-yellow-300"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -60,7 +60,7 @@ const ProductDetail = () => {
                       />
                     </svg>
                     <svg
-                      class="w-4 h-4 text-yellow-300"
+                      className="w-4 h-4 text-yellow-300"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -73,7 +73,7 @@ const ProductDetail = () => {
                       />
                     </svg>
                     <svg
-                      class="w-4 h-4 text-yellow-300"
+                      className="w-4 h-4 text-yellow-300"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -86,7 +86,7 @@ const ProductDetail = () => {
                       />
                     </svg>
                     <svg
-                      class="w-4 h-4 text-yellow-300"
+                      className="w-4 h-4 text-yellow-300"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
@@ -100,30 +100,30 @@ const ProductDetail = () => {
                     </svg>
                   </div>
                   <p
-                    class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400"
+                    className="text-sm font-medium leading-none text-gray-500 dark:text-gray-400"
                   >
                     (5.0)
                   </p>
                   <a
                     href="#"
-                    class="text-sm font-medium leading-none text-gray-900 underline hover:no-underlin"
+                    className="text-sm font-medium leading-none text-gray-900 underline hover:no-underlin"
                   >
                     345 Reviews
                   </a>
                 </div>
               </div>
 
-              <div class="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
+              <div className="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
 
 
                 <a
                   href={product.external_link}
                   title=""
-                  class="text-white mt-4 sm:mt-0 bg-blue-500 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex items-center justify-center "
+                  className="text-white mt-4 sm:mt-0 bg-blue-500 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex items-center justify-center "
                   role="button"
                 >
                   <svg
-                    class="w-5 h-5 -ms-2 me-2"
+                    className="w-5 h-5 -ms-2 me-2"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -144,10 +144,9 @@ const ProductDetail = () => {
                 </a>
               </div>
 
-              <hr class="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
+              <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
 
-              <p class="mb-6 text-gray-500 dark:text-gray-400">
-                {product.long_desc || product.short_desc}
+              <p className="mb-6 text-gray-500 dark:text-gray-400" dangerouslySetInnerHTML ={ { __html: product.long_desc || product.short_desc}}>
               </p>
 
 
