@@ -14,7 +14,7 @@ const Cards = ({ products: { id, name, image, short_desc, price } }) => {
       <div className="px-6 py-4 flex-1">
         <div className="font-bold text-xl mb-2">{name}</div>
         <p className="text-gray-700 text-base ">
-          {short_desc}
+          {/* {short_desc} */}
         </p>
       </div>
       <div className="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
