@@ -64,7 +64,7 @@ const AboutUs = () => {
     </div>
 
     <div className="flex flex-col items-center lg:items-start gap-4 w-full">
-      <h1 className="text-gray-900 text-4xl font-bold font-manrope leading-normal text-center lg:text-start">
+      <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-[#cca335] to-[#481310] text-4xl font-bold font-manrope leading-normal text-center lg:text-start">
         Why a Butterfly for Vastra by Rashi?
       </h1>
       <p className="text-gray-500 text-base leading-relaxed text-center lg:text-start">
@@ -72,7 +72,7 @@ const AboutUs = () => {
         Each wing showcases unique colors, just like how
         <span className="font-bold"> every person connects with a different fabric, color, or style.</span>
       </p>
-      <h5 className="text-blue-900 font-bold text-2xl text-center lg:text-start">
+      <h5 className="text-[#cca335] font-bold text-2xl text-center lg:text-start">
         For us, the butterfly stands for:
       </h5>
       <ul className="list-decimal pl-6 text-gray-600 text-base text-start space-y-1">
@@ -80,7 +80,7 @@ const AboutUs = () => {
         <li><span className="font-bold">Personal style</span> — just like no two butterflies are the same, neither is anyone’s taste in clothing.</li>
         <li><span className="font-bold">Transformation</span> — from simple thread to expressive fashion, like a cocoon to wings.</li>
       </ul>
-      <h1 className="text-2xl text-blue-900 font-bold text-center lg:text-start">
+      <h1 className="text-2xl text-[#481310] font-bold text-center lg:text-start">
         This is Every Thread Speaks Your Story — just like every color on a butterfly tells its own.
       </h1>
     </div>
