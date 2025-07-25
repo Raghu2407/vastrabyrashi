@@ -23,7 +23,7 @@ const Cards = ({ products: { id, name, image, price } }) => {
           </a>
           <div class="mt-4 px-5 pb-5">
             <a href="#">
-              <h5 class="text-xl tracking-tight text-slate-900">{name}</h5>
+              <h5 class="text-xl tracking-tight text-slate-900 clamp-2-lines">{name}</h5>
             </a>
             <div class="mt-2 mb-5 flex items-center justify-between">
               <p>

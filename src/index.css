@@ -15,3 +15,10 @@
     animation: wave-hand 2s infinite;
     transform-origin: 70% 70%; /* pivot like a real wave */
   }
+
+  .clamp-2-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
