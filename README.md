@@ -136,3 +136,4 @@ product.name.toLowerCase().includes(query.toLowerCase())
 
 This document captures your current progress. You now have a strong foundation to move into more advanced topics like state management with Redux, backend API integration, add-to-cart functionality, authentication, and admin dashboards.
 
+
