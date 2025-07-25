@@ -107,6 +107,45 @@
           "https://example.com/img3.jpg",
           "https://example.com/img4.jpg"
         ]
+      },{
+        "id": "TrackPro9Pants",
+        "name": "Trackpro Premium Lycra Lower for Men | Stylish & Comfortable Sports Track Pants",
+        "price": 379,
+        "currency": "INR",
+        "rating": 4.0,
+        "ratings_count": 2183,
+        "reviews_count": 667,
+        "free_delivery": true,
+        "return_policy": "7-day Returns",
+        "external_link": "https://www.meesho.com/s/p/9b9icw?utm_source=si",
+        "short_desc" : "Kushi Women’s Rayon Maroon Kurti – Stylish Floral Printed Kurti with Buttons | Office & Daily Wear – Vastra by Rashi",
+        "long_desc" : "<div>\n  <h2>Trackpro Premium Lycra Lower for Men | Stylish & Comfortable Sports Track Pants</h2>\n\n  <ul>\n    <li><strong>Fabric:</strong> Lycra</li>\n    <li><strong>Pattern:</strong> Solid</li>\n    <li><strong>Net Quantity:</strong> 1</li>\n  </ul>\n\n  <h3>About the Product</h3>\n  <p>\n    Elevate your active and casual wear collection with the Trackpro Premium Lycra Lower.\n    Crafted from a special blend of high-quality Lycra, these track pants are engineered\n    to provide an excellent fit and feel. The stretchable fabric moves with your body,\n    ensuring comfort at the gym, on a run, or while relaxing at home. Its lightweight and\n    breathable nature keeps you cool and dry.\n  </p>\n\n  <h3>Style and Versatility</h3>\n  <p>\n    This lower is more than just athletic wear — it’s a style statement. With a sleek,\n    modern design and slim-fit silhouette, it pairs effortlessly with t-shirts or\n    hoodies. The elastic waistband with drawstring offers a customizable fit, and\n    functional pockets provide added convenience.\n  </p>\n\n  <h3>Quality You Can Trust</h3>\n  <p>\n    From the trusted brand Trackpro, this lower represents quality and durability.\n    Reinforced stitching and fade-resistant fabric make it a lasting staple in your\n    activewear wardrobe.\n  </p>\n\n  <h4>Tags:</h4>\n  <ul>\n    <li>Men's Lycra Lower</li>\n    <li>Trackpro Track Pants</li>\n    <li>Gym Lower</li>\n    <li>Sports Lower</li>\n    <li>Lycra Joggers</li>\n    <li>Casual Track Pants</li>\n    <li>Running Lower</li>\n    <li>Men's Activewear</li>\n    <li>Comfortable Lower</li>\n    <li>Stretchable Track Pants</li>\n    <li>Stylish Lower</li>\n  </ul>\n\n  <h3>Sizes Available</h3>\n  <ul>\n    <li><strong>L:</strong> Waist 30 in, Length 38 in, Hip 38 in</li>\n    <li><strong>XL:</strong> Waist 34 in, Length 38 in, Hip 40 in</li>\n  </ul>\n\n  <p><strong>Country of Origin:</strong> India</p>\n</div>",
+        "image": "https://images.meesho.com/images/products/563115056/rzbaz_512.avif?width=512",
+        "cash_on_delivery": true,
+        "sizes": ["S", "M", "L", "XL", "XXL", "XXXL"],
+        "size_chart": {
+          "S": {"bust": 36, "shoulder": 13.5, "waist": 34, "length": 42, "bottom_waist": 30, "bottom_length": 39},
+          "M": {"bust": 38, "shoulder": 14, "waist": 36, "length": 42, "bottom_waist": 32, "bottom_length": 39},
+          "L": {"bust": 40, "shoulder": 14.5, "waist": 38, "length": 42, "bottom_waist": 34, "bottom_length": 39},
+          "XL": {"bust": 42, "shoulder": 15, "waist": 40, "length": 42, "bottom_waist": 36, "bottom_length": 39},
+          "XXL": {"bust": 44, "shoulder": 15.5, "waist": 42, "length": 42, "bottom_waist": 38, "bottom_length": 39},
+          "XXXL": {"bust": 46, "shoulder": 16, "waist": 44, "length": 42, "bottom_waist": 40, "bottom_length": 39}
+        },
+        "country_of_origin": "India",
+        "sold_by": {
+          "shop_name": "Vastra By Rashi",
+          "shop_rating": null,
+          "shop_ratings_count": null,
+          "shop_followers": null,
+          "shop_products": null
+        },
+        "reviews_sample": [],
+        "images": [
+          "https://example.com/img1.jpg",
+          "https://example.com/img2.jpg",
+          "https://example.com/img3.jpg",
+          "https://example.com/img4.jpg"
+        ]
       }
     ]
   }
