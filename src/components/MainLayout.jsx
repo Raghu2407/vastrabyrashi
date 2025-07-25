@@ -27,7 +27,7 @@ export default function Example() {
                 <div className="mx-auto max-w-2xl py-32s sm:py-48s lg:py-56s">
                     <div className="text-center">
                         <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
-                            <span className="animate-wave">👋</span> Welcome to <span className="text-pink-600">Vastra by Rashi</span>
+                        <span className="animate-wave">👋</span> Welcome to <span className="bg-clip-text  text-[#cca335]">Vastra </span> <span className='text-[#481310]'> by Rashi</span>
                         </h1>
                         <p class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-2xl font-semibold">
                             Every Thread Tells Your Story. 
