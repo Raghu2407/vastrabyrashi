@@ -146,6 +146,46 @@
           "https://example.com/img3.jpg",
           "https://example.com/img4.jpg"
         ]
+      },
+      {
+        "id": "TrackPro9Shorts",
+        "name": "Sports Trendy Men Shorts by Trackpro 9",
+        "price": 273,
+        "currency": "INR",
+        "rating": 4.0,
+        "ratings_count": 2183,
+        "reviews_count": 667,
+        "free_delivery": true,
+        "return_policy": "7-day Returns",
+        "external_link": "https://www.meesho.com/sports-trendy-men-shorts-by-trackpro-9/p/9da51y",
+        "short_desc" : "Kushi Women’s Rayon Maroon Kurti – Stylish Floral Printed Kurti with Buttons | Office & Daily Wear – Vastra by Rashi",
+        "long_desc" : "<div>\n  <h2>Sports Trendy Men Shorts by Trackpro 9</h2>\n\n  <ul>\n    <li><strong>Fabric:</strong> Polyester</li>\n    <li><strong>Pattern:</strong> Solid</li>\n    <li><strong>Net Quantity:</strong> 1</li>\n  </ul>\n\n  <h3>TrackPro 9 NS Italiya Premium Shorts – XL & XXL</h3>\n  <p>\n    Upgrade your comfort and style with TrackPro 9 shorts – crafted from premium NS Italiya fabric that’s ultra-lightweight, stretchable, and sweat-friendly.\n  </p>\n\n  <h3>✅ Key Features</h3>\n  <ul>\n    <li><strong>Premium NS Italiya Fabric:</strong> Smooth, breathable & quick-dry</li>\n    <li><strong>Smart Fit:</strong> Flexible elastic waistband for perfect grip</li>\n    <li><strong>Trendy Side Design:</strong> Sporty look that stands out</li>\n    <li><strong>Available Sizes:</strong> XL (34–36\") & XXL (38–40\")</li>\n    <li><strong>Mid-Rise Comfort:</strong> Perfect for gym, walking, lounging & travel</li>\n    <li><strong>Easy to Wash:</strong> Durable material, retains shape & color</li>\n  </ul>\n\n  <p><strong>Perfect for:</strong> Daily Wear | Gym | Travel | Casual Outing</p>\n  <p><strong>Introductory Offer Price – Limited Stock Only!</strong></p>\n  <p><strong>A product by:</strong> VastrabyRashi</p>\n\n  <h4>Tags:</h4>\n  <ul>\n    <li>NS Shorts for Sports Wear</li>\n    <li>Men’s Sports Shorts</li>\n    <li>Gym Shorts</li>\n    <li>Running Shorts</li>\n    <li>NS-Lycra Shorts</li>\n    <li>TrackPro 9 Shorts</li>\n  </ul>\n\n  <h3>Sizes Available</h3>\n  <ul>\n    <li><strong>XL:</strong> Waist 34 in, Length 20 in, Hip 42 in</li>\n    <li><strong>XXL:</strong> Waist 38 in, Length 21 in, Hip 46 in</li>\n  </ul>\n\n  <p><strong>Country of Origin:</strong> India</p>\n</div>",
+        "image": "https://images.meesho.com/images/products/566503702/x9yxn_512.avif?width=512",
+        "cash_on_delivery": true,
+        "sizes": ["S", "M", "L", "XL", "XXL", "XXXL"],
+        "size_chart": {
+          "S": {"bust": 36, "shoulder": 13.5, "waist": 34, "length": 42, "bottom_waist": 30, "bottom_length": 39},
+          "M": {"bust": 38, "shoulder": 14, "waist": 36, "length": 42, "bottom_waist": 32, "bottom_length": 39},
+          "L": {"bust": 40, "shoulder": 14.5, "waist": 38, "length": 42, "bottom_waist": 34, "bottom_length": 39},
+          "XL": {"bust": 42, "shoulder": 15, "waist": 40, "length": 42, "bottom_waist": 36, "bottom_length": 39},
+          "XXL": {"bust": 44, "shoulder": 15.5, "waist": 42, "length": 42, "bottom_waist": 38, "bottom_length": 39},
+          "XXXL": {"bust": 46, "shoulder": 16, "waist": 44, "length": 42, "bottom_waist": 40, "bottom_length": 39}
+        },
+        "country_of_origin": "India",
+        "sold_by": {
+          "shop_name": "Vastra By Rashi",
+          "shop_rating": null,
+          "shop_ratings_count": null,
+          "shop_followers": null,
+          "shop_products": null
+        },
+        "reviews_sample": [],
+        "images": [
+          "https://example.com/img1.jpg",
+          "https://example.com/img2.jpg",
+          "https://example.com/img3.jpg",
+          "https://example.com/img4.jpg"
+        ]
       }
     ]
   }
