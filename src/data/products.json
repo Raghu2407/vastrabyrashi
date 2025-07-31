@@ -186,6 +186,68 @@
           "https://example.com/img3.jpg",
           "https://example.com/img4.jpg"
         ]
+      },
+      {
+        "id": "9eqy1i",
+        "name": "Women's Fashion Kurti Cream - VastraByRashi",
+        "price": 308,
+        "currency": "INR",
+        "rating": 4.1,
+        "ratings_count": 1200,
+        "reviews_count": 447,
+        "free_delivery": true,
+        "return_policy": "7-day Returns",
+        "external_link": "https://meesho.com/teal-white-flower-print-kurti-and-pant-with-printed-dupatta-set/p/9eqy1i",
+        "short_desc" : "<div class=\"product-detail\"> <h1>Women's Fashion Kurti – Liva Cream Multi-Print Rayon Kurti</h1> <h2>by Vastra by Rashi</h2> <p class=\"tagline\"><em>Every Thread Speaks Your Story</em></p> <ul class=\"product-highlights\"> <li><strong>Fabric:</strong> Liva Rayon</li> <li><strong>Color:</strong> Cream base with Multicolor Ikat-style Print</li> <li><strong>Neckline:</strong> Round Neck</li> <li><strong>Sleeves:</strong> 3/4th Sleeves</li> <li><strong>Buttons:</strong> Front with Pink Buttons</li> <li><strong>Pattern:</strong> Dyed / Washed</li> <li><strong>Style:</strong> Straight Kurti</li> <li><strong>Occasion:</strong> Office Wear | Daily Wear | Festive Casuals</li> <li><strong>Wash Care:</strong> Machine/Hand Wash (Mild)</li> <li><strong>Country of Origin:</strong> India</li> </ul> <div class=\"sizes\"> <h3>Available Sizes:</h3> <ul> <li>L - Bust: 40 in, Length: 45 in</li> <li>XL - Bust: 42 in, Length: 44 in</li> </ul> </div> <div class=\"product-description\"> <p>Grace your everyday look with this elegant cream-colored printed rayon kurti by <strong>Vastra by Rashi</strong>. Featuring traditional ikat-inspired multi-color prints in pink, blue, and black, it brings subtle charm and a splash of color to your wardrobe.</p> <p>Made with premium Liva-certified rayon, this kurti is soft, breathable, and ideal for daily wear, office, or college. The round neckline, front-button detailing, and comfy sleeves give it a balanced blend of function and fashion.</p> </div> </div>",
+       "long_desc": "<div class=\"product-detail\"> <h1>Women's Fashion Kurti – Liva Cream Multi-Print Rayon Kurti</h1> <h2>by Vastra by Rashi</h2> <p class=\"tagline\"><em>Every Thread Speaks Your Story</em></p> <ul class=\"product-highlights\"> <li><strong>Fabric:</strong> Liva Rayon</li> <li><strong>Color:</strong> Cream base with Multicolor Ikat-style Print</li> <li><strong>Neckline:</strong> Round Neck</li> <li><strong>Sleeves:</strong> 3/4th Sleeves</li> <li><strong>Buttons:</strong> Front with Pink Buttons</li> <li><strong>Pattern:</strong> Dyed / Washed</li> <li><strong>Style:</strong> Straight Kurti</li> <li><strong>Occasion:</strong> Office Wear | Daily Wear | Festive Casuals</li> <li><strong>Wash Care:</strong> Machine/Hand Wash (Mild)</li> <li><strong>Country of Origin:</strong> India</li> </ul> <div class=\"sizes\"> <h3>Available Sizes:</h3> <ul> <li>L - Bust: 40 in, Length: 45 in</li> <li>XL - Bust: 42 in, Length: 44 in</li> </ul> </div> <div class=\"product-description\"> <p>Grace your everyday look with this elegant cream-colored printed rayon kurti by <strong>Vastra by Rashi</strong>. Featuring traditional ikat-inspired multi-color prints in pink, blue, and black, it brings subtle charm and a splash of color to your wardrobe.</p> <p>Made with premium Liva-certified rayon, this kurti is soft, breathable, and ideal for daily wear, office, or college. The round neckline, front-button detailing, and comfy sleeves give it a balanced blend of function and fashion.</p> </div> </div>",
+        "image": "https://images.meesho.com/images/products/575593424/qiiha_512.avif?width=512",
+        "cash_on_delivery": true,
+        "sizes": ["S", "M", "L", "XL", "XXL", "XXXL", "4XL", "5XL"],
+        "size_chart": {
+          "S": {"bust": 38, "top_length": 44, "waist": 30, "bottom_length": 39, "shoulder": 14},
+          "M": {"bust": 38, "top_length": 44, "waist": 30, "bottom_length": 39, "shoulder": 14},
+          "L": {"bust": 40, "top_length": 44, "waist": 32, "bottom_length": 39, "shoulder": 15},
+          "XL": {"bust": 42, "top_length": 44, "waist": 34, "bottom_length": 39, "shoulder": 15},
+          "XXL": {"bust": 44, "top_length": 44, "waist": 36, "bottom_length": 39, "shoulder": 16},
+          "XXXL": {"bust": 46, "waist": 38, "bottom_length": 39, "shoulder": 18},
+          "4XL": {},
+          "5XL": {}
+        },
+        "fabric": {"kurta": "Viscose Rayon", "bottom": "Viscose Rayon"},
+        "sleeve_length": "Three-Quarter Sleeves",
+        "pattern": "Printed",
+        "set_type": "Kurta with Dupatta and Bottomwear",
+        "stitch_type": "Stitched",
+        "net_quantity": "Single",
+        "country_of_origin": "India",
+        "sold_by": {
+          "shop_name": "RAKSH",
+          "shop_rating": 3.9,
+          "shop_ratings_count": 325238,
+          "shop_followers": 5861,
+          "shop_products": 72
+        },
+        "reviews_sample": [
+          {
+            "user": "Meesho User",
+            "rating": 4.0,
+            "date": "2025-07-04",
+            "comment": "Nice kurti set good for summer ,rayon fabric but somewhat thin ,go for it because of soft fabric and dupatta is pure cotton"
+          },
+          {
+            "user": "Rohit Sharma",
+            "rating": 5.0,
+            "date": "2025-06-02",
+            "comment": "Achha h lekin dupatta phata hua Hai lekin mene rakh liya h"
+          }
+        ],
+        "images": [
+          "image1_url",
+          "image2_url",
+          "image3_url",
+          "image4_url",
+          "image5_url"
+        ]
       }
     ]
   }
