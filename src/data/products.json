@@ -1,254 +1,498 @@
 {
-    "products": [
-      {
-        "id": "9eqy1i",
-        "name": "Teal white flower print kurti and pant with printed dupatta set",
-        "price": 308,
-        "currency": "INR",
-        "rating": 4.1,
-        "ratings_count": 1200,
-        "reviews_count": 447,
-        "free_delivery": true,
-        "return_policy": "7-day Returns",
-        "external_link": "https://meesho.com/teal-white-flower-print-kurti-and-pant-with-printed-dupatta-set/p/9eqy1i",
-        "short_desc" : "Add a touch of elegance to your everyday look with the latest Kushi Kurti by Vastra by Rashi. Crafted from premium rayon fabric, this teal blue kurti features delicate white floral prints, a round neck, 3/4th sleeves, and a button-down front — designed for both comfort and charm.",
-        "long_desc" : "",
-        "image": "https://images.meesho.com/images/products/568967382/tyltf_512.avif?width=512",
-        "cash_on_delivery": true,
-        "sizes": ["S", "M", "L", "XL", "XXL", "XXXL", "4XL", "5XL"],
-        "size_chart": {
-          "S": {"bust": 38, "top_length": 44, "waist": 30, "bottom_length": 39, "shoulder": 14},
-          "M": {"bust": 38, "top_length": 44, "waist": 30, "bottom_length": 39, "shoulder": 14},
-          "L": {"bust": 40, "top_length": 44, "waist": 32, "bottom_length": 39, "shoulder": 15},
-          "XL": {"bust": 42, "top_length": 44, "waist": 34, "bottom_length": 39, "shoulder": 15},
-          "XXL": {"bust": 44, "top_length": 44, "waist": 36, "bottom_length": 39, "shoulder": 16},
-          "XXXL": {"bust": 46, "waist": 38, "bottom_length": 39, "shoulder": 18},
-          "4XL": {},
-          "5XL": {}
+  "products": [
+    {
+      "id": "9eqy1i",
+      "name": "Teal white flower print kurti and pant with printed dupatta set",
+      "price": 308,
+      "currency": "INR",
+      "rating": 4.1,
+      "ratings_count": 1200,
+      "reviews_count": 447,
+      "free_delivery": true,
+      "return_policy": "7-day Returns",
+      "external_link": "https://meesho.com/teal-white-flower-print-kurti-and-pant-with-printed-dupatta-set/p/9eqy1i",
+      "short_desc": "Add a touch of elegance to your everyday look with the latest Kushi Kurti by Vastra by Rashi. Crafted from premium rayon fabric, this teal blue kurti features delicate white floral prints, a round neck, 3/4th sleeves, and a button-down front — designed for both comfort and charm.",
+      "long_desc": "",
+      "image": "https://images.meesho.com/images/products/568967382/tyltf_512.avif?width=512",
+      "cash_on_delivery": true,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL",
+        "4XL",
+        "5XL"
+      ],
+      "size_chart": {
+        "S": {
+          "bust": 38,
+          "top_length": 44,
+          "waist": 30,
+          "bottom_length": 39,
+          "shoulder": 14
         },
-        "fabric": {"kurta": "Viscose Rayon", "bottom": "Viscose Rayon"},
-        "sleeve_length": "Three-Quarter Sleeves",
-        "pattern": "Printed",
-        "set_type": "Kurta with Dupatta and Bottomwear",
-        "stitch_type": "Stitched",
-        "net_quantity": "Single",
-        "country_of_origin": "India",
-        "sold_by": {
-          "shop_name": "RAKSH",
-          "shop_rating": 3.9,
-          "shop_ratings_count": 325238,
-          "shop_followers": 5861,
-          "shop_products": 72
+        "M": {
+          "bust": 38,
+          "top_length": 44,
+          "waist": 30,
+          "bottom_length": 39,
+          "shoulder": 14
         },
-        "reviews_sample": [
-          {
-            "user": "Meesho User",
-            "rating": 4.0,
-            "date": "2025-07-04",
-            "comment": "Nice kurti set good for summer ,rayon fabric but somewhat thin ,go for it because of soft fabric and dupatta is pure cotton"
-          },
-          {
-            "user": "Rohit Sharma",
-            "rating": 5.0,
-            "date": "2025-06-02",
-            "comment": "Achha h lekin dupatta phata hua Hai lekin mene rakh liya h"
-          }
-        ],
-        "images": [
-          "image1_url",
-          "image2_url",
-          "image3_url",
-          "image4_url",
-          "image5_url"
-        ]
+        "L": {
+          "bust": 40,
+          "top_length": 44,
+          "waist": 32,
+          "bottom_length": 39,
+          "shoulder": 15
+        },
+        "XL": {
+          "bust": 42,
+          "top_length": 44,
+          "waist": 34,
+          "bottom_length": 39,
+          "shoulder": 15
+        },
+        "XXL": {
+          "bust": 44,
+          "top_length": 44,
+          "waist": 36,
+          "bottom_length": 39,
+          "shoulder": 16
+        },
+        "XXXL": {
+          "bust": 46,
+          "waist": 38,
+          "bottom_length": 39,
+          "shoulder": 18
+        },
+        "4XL": {},
+        "5XL": {}
       },
-      {
-        "id": "9ewsfz",
-        "name": "women`s Rayon Maroon Anarkali Style Kurtis with Plazzos Sets",
-        "price": 308,
-        "currency": "INR",
-        "rating": 4.0,
-        "ratings_count": 2183,
-        "reviews_count": 667,
-        "free_delivery": true,
-        "return_policy": "7-day Returns",
-        "external_link": "https://www.meesho.com/womens-kurti-rayon-maroon-color/p/9ewsfz",
-        "short_desc" : "Kushi Women’s Rayon Maroon Kurti – Stylish Floral Printed Kurti with Buttons | Office & Daily Wear – Vastra by Rashi",
-        "long_desc" : "<p><strong>Kushi Women’s Rayon Maroon Kurti</strong> – Stylish Floral Printed Kurti with Buttons | Office & Daily Wear – <em>Vastra by Rashi</em></p><p>Unveil your personal style with the latest Kushi Kurti from Vastra by Rashi, where comfort meets culture. This stunning maroon rayon kurti features elegant off-white floral and stripe prints, a classic round neck, button-down detailing, and 3/4th sleeves — tailored for the modern woman who values tradition with a twist.</p><p>Perfect for daily wear, office, college, or small events, it drapes gracefully while offering breathable ease all day long. Match it with jeans, leggings, or palazzos for a chic ethnic look.</p><p><em>\"Every Thread Speaks Your Story\"</em> — because you're not just wearing a kurti, you're wearing confidence.</p><p><strong>Fabric:</strong> Rayon<br><strong>Sleeve Length:</strong> Short Sleeves<br><strong>Pattern:</strong> Dyed/Washed<br><strong>Combo:</strong> Single<br><strong>Sizes:</strong><br>L (Bust: 40 in, Length: 45 in)<br>XL (Bust: 42 in, Length: 45 in)<br><strong>Country of Origin:</strong> India</p>",
-        "image": "https://images.meesho.com/images/products/569240063/tqj4t_512.avif?width=512",
-        "cash_on_delivery": true,
-        "sizes": ["S", "M", "L", "XL", "XXL", "XXXL"],
-        "size_chart": {
-          "S": {"bust": 36, "shoulder": 13.5, "waist": 34, "length": 42, "bottom_waist": 30, "bottom_length": 39},
-          "M": {"bust": 38, "shoulder": 14, "waist": 36, "length": 42, "bottom_waist": 32, "bottom_length": 39},
-          "L": {"bust": 40, "shoulder": 14.5, "waist": 38, "length": 42, "bottom_waist": 34, "bottom_length": 39},
-          "XL": {"bust": 42, "shoulder": 15, "waist": 40, "length": 42, "bottom_waist": 36, "bottom_length": 39},
-          "XXL": {"bust": 44, "shoulder": 15.5, "waist": 42, "length": 42, "bottom_waist": 38, "bottom_length": 39},
-          "XXXL": {"bust": 46, "shoulder": 16, "waist": 44, "length": 42, "bottom_waist": 40, "bottom_length": 39}
-        },
-        "fabric": {"kurta": "Rayon", "bottom": "Rayon"},
-        "sleeve_length": "Long Sleeves",
-        "pattern": "Printed",
-        "set_type": "Kurta With Bottomwear (Palazzos)",
-        "stitch_type": "Stitched",
-        "net_quantity": "Single",
-        "country_of_origin": "India",
-        "sold_by": {
-          "shop_name": "Vastra By Rashi",
-          "shop_rating": null,
-          "shop_ratings_count": null,
-          "shop_followers": null,
-          "shop_products": null
-        },
-        "reviews_sample": [],
-        "images": [
-          "https://example.com/img1.jpg",
-          "https://example.com/img2.jpg",
-          "https://example.com/img3.jpg",
-          "https://example.com/img4.jpg"
-        ]
-      },{
-        "id": "TrackPro9Pants",
-        "name": "Trackpro Premium Lycra Lower for Men | Stylish & Comfortable Sports Track Pants",
-        "price": 379,
-        "currency": "INR",
-        "rating": 4.0,
-        "ratings_count": 2183,
-        "reviews_count": 667,
-        "free_delivery": true,
-        "return_policy": "7-day Returns",
-        "external_link": "https://www.meesho.com/s/p/9b9icw?utm_source=si",
-        "short_desc" : "Kushi Women’s Rayon Maroon Kurti – Stylish Floral Printed Kurti with Buttons | Office & Daily Wear – Vastra by Rashi",
-        "long_desc" : "<div>\n  <h2>Trackpro Premium Lycra Lower for Men | Stylish & Comfortable Sports Track Pants</h2>\n\n  <ul>\n    <li><strong>Fabric:</strong> Lycra</li>\n    <li><strong>Pattern:</strong> Solid</li>\n    <li><strong>Net Quantity:</strong> 1</li>\n  </ul>\n\n  <h3>About the Product</h3>\n  <p>\n    Elevate your active and casual wear collection with the Trackpro Premium Lycra Lower.\n    Crafted from a special blend of high-quality Lycra, these track pants are engineered\n    to provide an excellent fit and feel. The stretchable fabric moves with your body,\n    ensuring comfort at the gym, on a run, or while relaxing at home. Its lightweight and\n    breathable nature keeps you cool and dry.\n  </p>\n\n  <h3>Style and Versatility</h3>\n  <p>\n    This lower is more than just athletic wear — it’s a style statement. With a sleek,\n    modern design and slim-fit silhouette, it pairs effortlessly with t-shirts or\n    hoodies. The elastic waistband with drawstring offers a customizable fit, and\n    functional pockets provide added convenience.\n  </p>\n\n  <h3>Quality You Can Trust</h3>\n  <p>\n    From the trusted brand Trackpro, this lower represents quality and durability.\n    Reinforced stitching and fade-resistant fabric make it a lasting staple in your\n    activewear wardrobe.\n  </p>\n\n  <h4>Tags:</h4>\n  <ul>\n    <li>Men's Lycra Lower</li>\n    <li>Trackpro Track Pants</li>\n    <li>Gym Lower</li>\n    <li>Sports Lower</li>\n    <li>Lycra Joggers</li>\n    <li>Casual Track Pants</li>\n    <li>Running Lower</li>\n    <li>Men's Activewear</li>\n    <li>Comfortable Lower</li>\n    <li>Stretchable Track Pants</li>\n    <li>Stylish Lower</li>\n  </ul>\n\n  <h3>Sizes Available</h3>\n  <ul>\n    <li><strong>L:</strong> Waist 30 in, Length 38 in, Hip 38 in</li>\n    <li><strong>XL:</strong> Waist 34 in, Length 38 in, Hip 40 in</li>\n  </ul>\n\n  <p><strong>Country of Origin:</strong> India</p>\n</div>",
-        "image": "https://images.meesho.com/images/products/563115056/rzbaz_512.avif?width=512",
-        "cash_on_delivery": true,
-        "sizes": ["S", "M", "L", "XL", "XXL", "XXXL"],
-        "size_chart": {
-          "S": {"bust": 36, "shoulder": 13.5, "waist": 34, "length": 42, "bottom_waist": 30, "bottom_length": 39},
-          "M": {"bust": 38, "shoulder": 14, "waist": 36, "length": 42, "bottom_waist": 32, "bottom_length": 39},
-          "L": {"bust": 40, "shoulder": 14.5, "waist": 38, "length": 42, "bottom_waist": 34, "bottom_length": 39},
-          "XL": {"bust": 42, "shoulder": 15, "waist": 40, "length": 42, "bottom_waist": 36, "bottom_length": 39},
-          "XXL": {"bust": 44, "shoulder": 15.5, "waist": 42, "length": 42, "bottom_waist": 38, "bottom_length": 39},
-          "XXXL": {"bust": 46, "shoulder": 16, "waist": 44, "length": 42, "bottom_waist": 40, "bottom_length": 39}
-        },
-        "country_of_origin": "India",
-        "sold_by": {
-          "shop_name": "Vastra By Rashi",
-          "shop_rating": null,
-          "shop_ratings_count": null,
-          "shop_followers": null,
-          "shop_products": null
-        },
-        "reviews_sample": [],
-        "images": [
-          "https://example.com/img1.jpg",
-          "https://example.com/img2.jpg",
-          "https://example.com/img3.jpg",
-          "https://example.com/img4.jpg"
-        ]
+      "fabric": {
+        "kurta": "Viscose Rayon",
+        "bottom": "Viscose Rayon"
       },
-      {
-        "id": "TrackPro9Shorts",
-        "name": "Sports Trendy Men Shorts by Trackpro 9",
-        "price": 273,
-        "currency": "INR",
-        "rating": 4.0,
-        "ratings_count": 2183,
-        "reviews_count": 667,
-        "free_delivery": true,
-        "return_policy": "7-day Returns",
-        "external_link": "https://www.meesho.com/sports-trendy-men-shorts-by-trackpro-9/p/9da51y",
-        "short_desc" : "Kushi Women’s Rayon Maroon Kurti – Stylish Floral Printed Kurti with Buttons | Office & Daily Wear – Vastra by Rashi",
-        "long_desc" : "<div>\n  <h2>Sports Trendy Men Shorts by Trackpro 9</h2>\n\n  <ul>\n    <li><strong>Fabric:</strong> Polyester</li>\n    <li><strong>Pattern:</strong> Solid</li>\n    <li><strong>Net Quantity:</strong> 1</li>\n  </ul>\n\n  <h3>TrackPro 9 NS Italiya Premium Shorts – XL & XXL</h3>\n  <p>\n    Upgrade your comfort and style with TrackPro 9 shorts – crafted from premium NS Italiya fabric that’s ultra-lightweight, stretchable, and sweat-friendly.\n  </p>\n\n  <h3>✅ Key Features</h3>\n  <ul>\n    <li><strong>Premium NS Italiya Fabric:</strong> Smooth, breathable & quick-dry</li>\n    <li><strong>Smart Fit:</strong> Flexible elastic waistband for perfect grip</li>\n    <li><strong>Trendy Side Design:</strong> Sporty look that stands out</li>\n    <li><strong>Available Sizes:</strong> XL (34–36\") & XXL (38–40\")</li>\n    <li><strong>Mid-Rise Comfort:</strong> Perfect for gym, walking, lounging & travel</li>\n    <li><strong>Easy to Wash:</strong> Durable material, retains shape & color</li>\n  </ul>\n\n  <p><strong>Perfect for:</strong> Daily Wear | Gym | Travel | Casual Outing</p>\n  <p><strong>Introductory Offer Price – Limited Stock Only!</strong></p>\n  <p><strong>A product by:</strong> VastrabyRashi</p>\n\n  <h4>Tags:</h4>\n  <ul>\n    <li>NS Shorts for Sports Wear</li>\n    <li>Men’s Sports Shorts</li>\n    <li>Gym Shorts</li>\n    <li>Running Shorts</li>\n    <li>NS-Lycra Shorts</li>\n    <li>TrackPro 9 Shorts</li>\n  </ul>\n\n  <h3>Sizes Available</h3>\n  <ul>\n    <li><strong>XL:</strong> Waist 34 in, Length 20 in, Hip 42 in</li>\n    <li><strong>XXL:</strong> Waist 38 in, Length 21 in, Hip 46 in</li>\n  </ul>\n\n  <p><strong>Country of Origin:</strong> India</p>\n</div>",
-        "image": "https://images.meesho.com/images/products/566503702/x9yxn_512.avif?width=512",
-        "cash_on_delivery": true,
-        "sizes": ["S", "M", "L", "XL", "XXL", "XXXL"],
-        "size_chart": {
-          "S": {"bust": 36, "shoulder": 13.5, "waist": 34, "length": 42, "bottom_waist": 30, "bottom_length": 39},
-          "M": {"bust": 38, "shoulder": 14, "waist": 36, "length": 42, "bottom_waist": 32, "bottom_length": 39},
-          "L": {"bust": 40, "shoulder": 14.5, "waist": 38, "length": 42, "bottom_waist": 34, "bottom_length": 39},
-          "XL": {"bust": 42, "shoulder": 15, "waist": 40, "length": 42, "bottom_waist": 36, "bottom_length": 39},
-          "XXL": {"bust": 44, "shoulder": 15.5, "waist": 42, "length": 42, "bottom_waist": 38, "bottom_length": 39},
-          "XXXL": {"bust": 46, "shoulder": 16, "waist": 44, "length": 42, "bottom_waist": 40, "bottom_length": 39}
-        },
-        "country_of_origin": "India",
-        "sold_by": {
-          "shop_name": "Vastra By Rashi",
-          "shop_rating": null,
-          "shop_ratings_count": null,
-          "shop_followers": null,
-          "shop_products": null
-        },
-        "reviews_sample": [],
-        "images": [
-          "https://example.com/img1.jpg",
-          "https://example.com/img2.jpg",
-          "https://example.com/img3.jpg",
-          "https://example.com/img4.jpg"
-        ]
+      "sleeve_length": "Three-Quarter Sleeves",
+      "pattern": "Printed",
+      "set_type": "Kurta with Dupatta and Bottomwear",
+      "stitch_type": "Stitched",
+      "net_quantity": "Single",
+      "country_of_origin": "India",
+      "sold_by": {
+        "shop_name": "Vastra  By Rashi",
+        "shop_rating": 3.9,
+        "shop_ratings_count": 325238,
+        "shop_followers": 4,
+        "shop_products": 72
       },
-      {
-        "id": "vastrabyrashicreamcolor",
-        "name": "Women's Fashion Kurti Cream - VastraByRashi",
-        "price": 308,
-        "currency": "INR",
-        "rating": 4.1,
-        "ratings_count": 1200,
-        "reviews_count": 447,
-        "free_delivery": true,
-        "return_policy": "7-day Returns",
-        "external_link": "https://www.meesho.com/s/p/9ioyq8?utm_source=si",
-        "short_desc" : "<div class=\"product-detail\"> <h1>Women's Fashion Kurti – Liva Cream Multi-Print Rayon Kurti</h1> <h2>by Vastra by Rashi</h2> <p class=\"tagline\"><em>Every Thread Speaks Your Story</em></p> <ul class=\"product-highlights\"> <li><strong>Fabric:</strong> Liva Rayon</li> <li><strong>Color:</strong> Cream base with Multicolor Ikat-style Print</li> <li><strong>Neckline:</strong> Round Neck</li> <li><strong>Sleeves:</strong> 3/4th Sleeves</li> <li><strong>Buttons:</strong> Front with Pink Buttons</li> <li><strong>Pattern:</strong> Dyed / Washed</li> <li><strong>Style:</strong> Straight Kurti</li> <li><strong>Occasion:</strong> Office Wear | Daily Wear | Festive Casuals</li> <li><strong>Wash Care:</strong> Machine/Hand Wash (Mild)</li> <li><strong>Country of Origin:</strong> India</li> </ul> <div class=\"sizes\"> <h3>Available Sizes:</h3> <ul> <li>L - Bust: 40 in, Length: 45 in</li> <li>XL - Bust: 42 in, Length: 44 in</li> </ul> </div> <div class=\"product-description\"> <p>Grace your everyday look with this elegant cream-colored printed rayon kurti by <strong>Vastra by Rashi</strong>. Featuring traditional ikat-inspired multi-color prints in pink, blue, and black, it brings subtle charm and a splash of color to your wardrobe.</p> <p>Made with premium Liva-certified rayon, this kurti is soft, breathable, and ideal for daily wear, office, or college. The round neckline, front-button detailing, and comfy sleeves give it a balanced blend of function and fashion.</p> </div> </div>",
-       "long_desc": "<div class=\"product-detail\"> <h1>Women's Fashion Kurti – Liva Cream Multi-Print Rayon Kurti</h1> <h2>by Vastra by Rashi</h2> <p class=\"tagline\"><em>Every Thread Speaks Your Story</em></p> <ul class=\"product-highlights\"> <li><strong>Fabric:</strong> Liva Rayon</li> <li><strong>Color:</strong> Cream base with Multicolor Ikat-style Print</li> <li><strong>Neckline:</strong> Round Neck</li> <li><strong>Sleeves:</strong> 3/4th Sleeves</li> <li><strong>Buttons:</strong> Front with Pink Buttons</li> <li><strong>Pattern:</strong> Dyed / Washed</li> <li><strong>Style:</strong> Straight Kurti</li> <li><strong>Occasion:</strong> Office Wear | Daily Wear | Festive Casuals</li> <li><strong>Wash Care:</strong> Machine/Hand Wash (Mild)</li> <li><strong>Country of Origin:</strong> India</li> </ul> <div class=\"sizes\"> <h3>Available Sizes:</h3> <ul> <li>L - Bust: 40 in, Length: 45 in</li> <li>XL - Bust: 42 in, Length: 44 in</li> </ul> </div> <div class=\"product-description\"> <p>Grace your everyday look with this elegant cream-colored printed rayon kurti by <strong>Vastra by Rashi</strong>. Featuring traditional ikat-inspired multi-color prints in pink, blue, and black, it brings subtle charm and a splash of color to your wardrobe.</p> <p>Made with premium Liva-certified rayon, this kurti is soft, breathable, and ideal for daily wear, office, or college. The round neckline, front-button detailing, and comfy sleeves give it a balanced blend of function and fashion.</p> </div> </div>",
-        "image": "https://images.meesho.com/images/products/575593424/qiiha_512.avif?width=512",
-        "cash_on_delivery": true,
-        "sizes": ["S", "M", "L", "XL", "XXL", "XXXL", "4XL", "5XL"],
-        "size_chart": {
-          "S": {"bust": 38, "top_length": 44, "waist": 30, "bottom_length": 39, "shoulder": 14},
-          "M": {"bust": 38, "top_length": 44, "waist": 30, "bottom_length": 39, "shoulder": 14},
-          "L": {"bust": 40, "top_length": 44, "waist": 32, "bottom_length": 39, "shoulder": 15},
-          "XL": {"bust": 42, "top_length": 44, "waist": 34, "bottom_length": 39, "shoulder": 15},
-          "XXL": {"bust": 44, "top_length": 44, "waist": 36, "bottom_length": 39, "shoulder": 16},
-          "XXXL": {"bust": 46, "waist": 38, "bottom_length": 39, "shoulder": 18},
-          "4XL": {},
-          "5XL": {}
+      "reviews_sample": [
+        {
+          "user": "Meesho User",
+          "rating": 4.0,
+          "date": "2025-07-04",
+          "comment": "Nice kurti set good for summer ,rayon fabric but somewhat thin ,go for it because of soft fabric and dupatta is pure cotton"
         },
-        "fabric": {"kurta": "Viscose Rayon", "bottom": "Viscose Rayon"},
-        "sleeve_length": "Three-Quarter Sleeves",
-        "pattern": "Printed",
-        "set_type": "Kurta with Dupatta and Bottomwear",
-        "stitch_type": "Stitched",
-        "net_quantity": "Single",
-        "country_of_origin": "India",
-        "sold_by": {
-          "shop_name": "RAKSH",
-          "shop_rating": 3.9,
-          "shop_ratings_count": 325238,
-          "shop_followers": 5861,
-          "shop_products": 72
+        {
+          "user": "Rohit Sharma",
+          "rating": 5.0,
+          "date": "2025-06-02",
+          "comment": "Achha h lekin dupatta phata hua Hai lekin mene rakh liya h"
+        }
+      ],
+      "images": [
+        "image1_url",
+        "image2_url",
+        "image3_url",
+        "image4_url",
+        "image5_url"
+      ]
+    },
+    {
+      "id": "9ewsfz",
+      "name": "women`s Rayon Maroon Anarkali Style Kurtis with Plazzos Sets",
+      "price": 308,
+      "currency": "INR",
+      "rating": 4.0,
+      "ratings_count": 2183,
+      "reviews_count": 667,
+      "free_delivery": true,
+      "return_policy": "7-day Returns",
+      "external_link": "https://www.meesho.com/womens-kurti-rayon-maroon-color/p/9ewsfz",
+      "short_desc": "Kushi Women’s Rayon Maroon Kurti – Stylish Floral Printed Kurti with Buttons | Office & Daily Wear – Vastra by Rashi",
+      "long_desc": "<p><strong>Kushi Women’s Rayon Maroon Kurti</strong> – Stylish Floral Printed Kurti with Buttons | Office & Daily Wear – <em>Vastra by Rashi</em></p><p>Unveil your personal style with the latest Kushi Kurti from Vastra by Rashi, where comfort meets culture. This stunning maroon rayon kurti features elegant off-white floral and stripe prints, a classic round neck, button-down detailing, and 3/4th sleeves — tailored for the modern woman who values tradition with a twist.</p><p>Perfect for daily wear, office, college, or small events, it drapes gracefully while offering breathable ease all day long. Match it with jeans, leggings, or palazzos for a chic ethnic look.</p><p><em>\"Every Thread Speaks Your Story\"</em> — because you're not just wearing a kurti, you're wearing confidence.</p><p><strong>Fabric:</strong> Rayon<br><strong>Sleeve Length:</strong> Short Sleeves<br><strong>Pattern:</strong> Dyed/Washed<br><strong>Combo:</strong> Single<br><strong>Sizes:</strong><br>L (Bust: 40 in, Length: 45 in)<br>XL (Bust: 42 in, Length: 45 in)<br><strong>Country of Origin:</strong> India</p>",
+      "image": "https://images.meesho.com/images/products/569240063/tqj4t_512.avif?width=512",
+      "cash_on_delivery": true,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL"
+      ],
+      "size_chart": {
+        "S": {
+          "bust": 36,
+          "shoulder": 13.5,
+          "waist": 34,
+          "length": 42,
+          "bottom_waist": 30,
+          "bottom_length": 39
         },
-        "reviews_sample": [
-          {
-            "user": "Meesho User",
-            "rating": 4.0,
-            "date": "2025-07-04",
-            "comment": "Nice kurti set good for summer ,rayon fabric but somewhat thin ,go for it because of soft fabric and dupatta is pure cotton"
-          },
-          {
-            "user": "Rohit Sharma",
-            "rating": 5.0,
-            "date": "2025-06-02",
-            "comment": "Achha h lekin dupatta phata hua Hai lekin mene rakh liya h"
-          }
-        ],
-        "images": [
-          "image1_url",
-          "image2_url",
-          "image3_url",
-          "image4_url",
-          "image5_url"
-        ]
-      }
-    ]
-  }
-  
+        "M": {
+          "bust": 38,
+          "shoulder": 14,
+          "waist": 36,
+          "length": 42,
+          "bottom_waist": 32,
+          "bottom_length": 39
+        },
+        "L": {
+          "bust": 40,
+          "shoulder": 14.5,
+          "waist": 38,
+          "length": 42,
+          "bottom_waist": 34,
+          "bottom_length": 39
+        },
+        "XL": {
+          "bust": 42,
+          "shoulder": 15,
+          "waist": 40,
+          "length": 42,
+          "bottom_waist": 36,
+          "bottom_length": 39
+        },
+        "XXL": {
+          "bust": 44,
+          "shoulder": 15.5,
+          "waist": 42,
+          "length": 42,
+          "bottom_waist": 38,
+          "bottom_length": 39
+        },
+        "XXXL": {
+          "bust": 46,
+          "shoulder": 16,
+          "waist": 44,
+          "length": 42,
+          "bottom_waist": 40,
+          "bottom_length": 39
+        }
+      },
+      "fabric": {
+        "kurta": "Rayon",
+        "bottom": "Rayon"
+      },
+      "sleeve_length": "Long Sleeves",
+      "pattern": "Printed",
+      "set_type": "Kurta With Bottomwear (Palazzos)",
+      "stitch_type": "Stitched",
+      "net_quantity": "Single",
+      "country_of_origin": "India",
+      "sold_by": {
+        "shop_name": "Vastra By Rashi",
+        "shop_rating": null,
+        "shop_ratings_count": null,
+        "shop_followers": 4,
+        "shop_products": null
+      },
+      "reviews_sample": [],
+      "images": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg",
+        "https://example.com/img3.jpg",
+        "https://example.com/img4.jpg"
+      ]
+    },
+    {
+      "id": "TrackPro9Pants",
+      "name": "Trackpro Premium Lycra Lower for Men | Stylish & Comfortable Sports Track Pants",
+      "price": 379,
+      "currency": "INR",
+      "rating": 4.0,
+      "ratings_count": 2183,
+      "reviews_count": 667,
+      "free_delivery": true,
+      "return_policy": "7-day Returns",
+      "external_link": "https://www.meesho.com/s/p/9b9icw?utm_source=si",
+      "short_desc": "Kushi Women’s Rayon Maroon Kurti – Stylish Floral Printed Kurti with Buttons | Office & Daily Wear – Vastra by Rashi",
+      "long_desc": "<div>\n  <h2>Trackpro Premium Lycra Lower for Men | Stylish & Comfortable Sports Track Pants</h2>\n\n  <ul>\n    <li><strong>Fabric:</strong> Lycra</li>\n    <li><strong>Pattern:</strong> Solid</li>\n    <li><strong>Net Quantity:</strong> 1</li>\n  </ul>\n\n  <h3>About the Product</h3>\n  <p>\n    Elevate your active and casual wear collection with the Trackpro Premium Lycra Lower.\n    Crafted from a special blend of high-quality Lycra, these track pants are engineered\n    to provide an excellent fit and feel. The stretchable fabric moves with your body,\n    ensuring comfort at the gym, on a run, or while relaxing at home. Its lightweight and\n    breathable nature keeps you cool and dry.\n  </p>\n\n  <h3>Style and Versatility</h3>\n  <p>\n    This lower is more than just athletic wear — it’s a style statement. With a sleek,\n    modern design and slim-fit silhouette, it pairs effortlessly with t-shirts or\n    hoodies. The elastic waistband with drawstring offers a customizable fit, and\n    functional pockets provide added convenience.\n  </p>\n\n  <h3>Quality You Can Trust</h3>\n  <p>\n    From the trusted brand Trackpro, this lower represents quality and durability.\n    Reinforced stitching and fade-resistant fabric make it a lasting staple in your\n    activewear wardrobe.\n  </p>\n\n  <h4>Tags:</h4>\n  <ul>\n    <li>Men's Lycra Lower</li>\n    <li>Trackpro Track Pants</li>\n    <li>Gym Lower</li>\n    <li>Sports Lower</li>\n    <li>Lycra Joggers</li>\n    <li>Casual Track Pants</li>\n    <li>Running Lower</li>\n    <li>Men's Activewear</li>\n    <li>Comfortable Lower</li>\n    <li>Stretchable Track Pants</li>\n    <li>Stylish Lower</li>\n  </ul>\n\n  <h3>Sizes Available</h3>\n  <ul>\n    <li><strong>L:</strong> Waist 30 in, Length 38 in, Hip 38 in</li>\n    <li><strong>XL:</strong> Waist 34 in, Length 38 in, Hip 40 in</li>\n  </ul>\n\n  <p><strong>Country of Origin:</strong> India</p>\n</div>",
+      "image": "https://images.meesho.com/images/products/563115056/rzbaz_512.avif?width=512",
+      "cash_on_delivery": true,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL"
+      ],
+      "size_chart": {
+        "S": {
+          "bust": 36,
+          "shoulder": 13.5,
+          "waist": 34,
+          "length": 42,
+          "bottom_waist": 30,
+          "bottom_length": 39
+        },
+        "M": {
+          "bust": 38,
+          "shoulder": 14,
+          "waist": 36,
+          "length": 42,
+          "bottom_waist": 32,
+          "bottom_length": 39
+        },
+        "L": {
+          "bust": 40,
+          "shoulder": 14.5,
+          "waist": 38,
+          "length": 42,
+          "bottom_waist": 34,
+          "bottom_length": 39
+        },
+        "XL": {
+          "bust": 42,
+          "shoulder": 15,
+          "waist": 40,
+          "length": 42,
+          "bottom_waist": 36,
+          "bottom_length": 39
+        },
+        "XXL": {
+          "bust": 44,
+          "shoulder": 15.5,
+          "waist": 42,
+          "length": 42,
+          "bottom_waist": 38,
+          "bottom_length": 39
+        },
+        "XXXL": {
+          "bust": 46,
+          "shoulder": 16,
+          "waist": 44,
+          "length": 42,
+          "bottom_waist": 40,
+          "bottom_length": 39
+        }
+      },
+      "country_of_origin": "India",
+      "sold_by": {
+        "shop_name": "Vastra By Rashi",
+        "shop_rating": null,
+        "shop_ratings_count": null,
+        "shop_followers": 4,
+        "shop_products": null
+      },
+      "reviews_sample": [],
+      "images": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg",
+        "https://example.com/img3.jpg",
+        "https://example.com/img4.jpg"
+      ]
+    },
+    {
+      "id": "TrackPro9Shorts",
+      "name": "Sports Trendy Men Shorts by Trackpro 9",
+      "price": 273,
+      "currency": "INR",
+      "rating": 4.0,
+      "ratings_count": 2183,
+      "reviews_count": 667,
+      "free_delivery": true,
+      "return_policy": "7-day Returns",
+      "external_link": "https://www.meesho.com/sports-trendy-men-shorts-by-trackpro-9/p/9da51y",
+      "short_desc": "Kushi Women’s Rayon Maroon Kurti – Stylish Floral Printed Kurti with Buttons | Office & Daily Wear – Vastra by Rashi",
+      "long_desc": "<div>\n  <h2>Sports Trendy Men Shorts by Trackpro 9</h2>\n\n  <ul>\n    <li><strong>Fabric:</strong> Polyester</li>\n    <li><strong>Pattern:</strong> Solid</li>\n    <li><strong>Net Quantity:</strong> 1</li>\n  </ul>\n\n  <h3>TrackPro 9 NS Italiya Premium Shorts – XL & XXL</h3>\n  <p>\n    Upgrade your comfort and style with TrackPro 9 shorts – crafted from premium NS Italiya fabric that’s ultra-lightweight, stretchable, and sweat-friendly.\n  </p>\n\n  <h3>✅ Key Features</h3>\n  <ul>\n    <li><strong>Premium NS Italiya Fabric:</strong> Smooth, breathable & quick-dry</li>\n    <li><strong>Smart Fit:</strong> Flexible elastic waistband for perfect grip</li>\n    <li><strong>Trendy Side Design:</strong> Sporty look that stands out</li>\n    <li><strong>Available Sizes:</strong> XL (34–36\") & XXL (38–40\")</li>\n    <li><strong>Mid-Rise Comfort:</strong> Perfect for gym, walking, lounging & travel</li>\n    <li><strong>Easy to Wash:</strong> Durable material, retains shape & color</li>\n  </ul>\n\n  <p><strong>Perfect for:</strong> Daily Wear | Gym | Travel | Casual Outing</p>\n  <p><strong>Introductory Offer Price – Limited Stock Only!</strong></p>\n  <p><strong>A product by:</strong> VastrabyRashi</p>\n\n  <h4>Tags:</h4>\n  <ul>\n    <li>NS Shorts for Sports Wear</li>\n    <li>Men’s Sports Shorts</li>\n    <li>Gym Shorts</li>\n    <li>Running Shorts</li>\n    <li>NS-Lycra Shorts</li>\n    <li>TrackPro 9 Shorts</li>\n  </ul>\n\n  <h3>Sizes Available</h3>\n  <ul>\n    <li><strong>XL:</strong> Waist 34 in, Length 20 in, Hip 42 in</li>\n    <li><strong>XXL:</strong> Waist 38 in, Length 21 in, Hip 46 in</li>\n  </ul>\n\n  <p><strong>Country of Origin:</strong> India</p>\n</div>",
+      "image": "https://images.meesho.com/images/products/566503702/x9yxn_512.avif?width=512",
+      "cash_on_delivery": true,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL"
+      ],
+      "size_chart": {
+        "S": {
+          "bust": 36,
+          "shoulder": 13.5,
+          "waist": 34,
+          "length": 42,
+          "bottom_waist": 30,
+          "bottom_length": 39
+        },
+        "M": {
+          "bust": 38,
+          "shoulder": 14,
+          "waist": 36,
+          "length": 42,
+          "bottom_waist": 32,
+          "bottom_length": 39
+        },
+        "L": {
+          "bust": 40,
+          "shoulder": 14.5,
+          "waist": 38,
+          "length": 42,
+          "bottom_waist": 34,
+          "bottom_length": 39
+        },
+        "XL": {
+          "bust": 42,
+          "shoulder": 15,
+          "waist": 40,
+          "length": 42,
+          "bottom_waist": 36,
+          "bottom_length": 39
+        },
+        "XXL": {
+          "bust": 44,
+          "shoulder": 15.5,
+          "waist": 42,
+          "length": 42,
+          "bottom_waist": 38,
+          "bottom_length": 39
+        },
+        "XXXL": {
+          "bust": 46,
+          "shoulder": 16,
+          "waist": 44,
+          "length": 42,
+          "bottom_waist": 40,
+          "bottom_length": 39
+        }
+      },
+      "country_of_origin": "India",
+      "sold_by": {
+        "shop_name": "Vastra By Rashi",
+        "shop_rating": null,
+        "shop_ratings_count": null,
+        "shop_followers": 4,
+        "shop_products": null
+      },
+      "reviews_sample": [],
+      "images": [
+        "https://example.com/img1.jpg",
+        "https://example.com/img2.jpg",
+        "https://example.com/img3.jpg",
+        "https://example.com/img4.jpg"
+      ]
+    },
+    {
+      "id": "vastrabyrashicreamcolor",
+      "name": "Women's Fashion Kurti Cream - VastraByRashi",
+      "price": 308,
+      "currency": "INR",
+      "rating": 4.1,
+      "ratings_count": 1200,
+      "reviews_count": 447,
+      "free_delivery": true,
+      "return_policy": "7-day Returns",
+      "external_link": "https://www.meesho.com/s/p/9ioyq8?utm_source=si",
+      "short_desc": "<div class=\"product-detail\"> <h1>Women's Fashion Kurti – Liva Cream Multi-Print Rayon Kurti</h1> <h2>by Vastra by Rashi</h2> <p class=\"tagline\"><em>Every Thread Speaks Your Story</em></p> <ul class=\"product-highlights\"> <li><strong>Fabric:</strong> Liva Rayon</li> <li><strong>Color:</strong> Cream base with Multicolor Ikat-style Print</li> <li><strong>Neckline:</strong> Round Neck</li> <li><strong>Sleeves:</strong> 3/4th Sleeves</li> <li><strong>Buttons:</strong> Front with Pink Buttons</li> <li><strong>Pattern:</strong> Dyed / Washed</li> <li><strong>Style:</strong> Straight Kurti</li> <li><strong>Occasion:</strong> Office Wear | Daily Wear | Festive Casuals</li> <li><strong>Wash Care:</strong> Machine/Hand Wash (Mild)</li> <li><strong>Country of Origin:</strong> India</li> </ul> <div class=\"sizes\"> <h3>Available Sizes:</h3> <ul> <li>L - Bust: 40 in, Length: 45 in</li> <li>XL - Bust: 42 in, Length: 44 in</li> </ul> </div> <div class=\"product-description\"> <p>Grace your everyday look with this elegant cream-colored printed rayon kurti by <strong>Vastra by Rashi</strong>. Featuring traditional ikat-inspired multi-color prints in pink, blue, and black, it brings subtle charm and a splash of color to your wardrobe.</p> <p>Made with premium Liva-certified rayon, this kurti is soft, breathable, and ideal for daily wear, office, or college. The round neckline, front-button detailing, and comfy sleeves give it a balanced blend of function and fashion.</p> </div> </div>",
+      "long_desc": "<div class=\"product-detail\"> <h1>Women's Fashion Kurti – Liva Cream Multi-Print Rayon Kurti</h1> <h2>by Vastra by Rashi</h2> <p class=\"tagline\"><em>Every Thread Speaks Your Story</em></p> <ul class=\"product-highlights\"> <li><strong>Fabric:</strong> Liva Rayon</li> <li><strong>Color:</strong> Cream base with Multicolor Ikat-style Print</li> <li><strong>Neckline:</strong> Round Neck</li> <li><strong>Sleeves:</strong> 3/4th Sleeves</li> <li><strong>Buttons:</strong> Front with Pink Buttons</li> <li><strong>Pattern:</strong> Dyed / Washed</li> <li><strong>Style:</strong> Straight Kurti</li> <li><strong>Occasion:</strong> Office Wear | Daily Wear | Festive Casuals</li> <li><strong>Wash Care:</strong> Machine/Hand Wash (Mild)</li> <li><strong>Country of Origin:</strong> India</li> </ul> <div class=\"sizes\"> <h3>Available Sizes:</h3> <ul> <li>L - Bust: 40 in, Length: 45 in</li> <li>XL - Bust: 42 in, Length: 44 in</li> </ul> </div> <div class=\"product-description\"> <p>Grace your everyday look with this elegant cream-colored printed rayon kurti by <strong>Vastra by Rashi</strong>. Featuring traditional ikat-inspired multi-color prints in pink, blue, and black, it brings subtle charm and a splash of color to your wardrobe.</p> <p>Made with premium Liva-certified rayon, this kurti is soft, breathable, and ideal for daily wear, office, or college. The round neckline, front-button detailing, and comfy sleeves give it a balanced blend of function and fashion.</p> </div> </div>",
+      "image": "https://images.meesho.com/images/products/575593424/qiiha_512.avif?width=512",
+      "cash_on_delivery": true,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "XXXL",
+        "4XL",
+        "5XL"
+      ],
+      "size_chart": {
+        "S": {
+          "bust": 38,
+          "top_length": 44,
+          "waist": 30,
+          "bottom_length": 39,
+          "shoulder": 14
+        },
+        "M": {
+          "bust": 38,
+          "top_length": 44,
+          "waist": 30,
+          "bottom_length": 39,
+          "shoulder": 14
+        },
+        "L": {
+          "bust": 40,
+          "top_length": 44,
+          "waist": 32,
+          "bottom_length": 39,
+          "shoulder": 15
+        },
+        "XL": {
+          "bust": 42,
+          "top_length": 44,
+          "waist": 34,
+          "bottom_length": 39,
+          "shoulder": 15
+        },
+        "XXL": {
+          "bust": 44,
+          "top_length": 44,
+          "waist": 36,
+          "bottom_length": 39,
+          "shoulder": 16
+        },
+        "XXXL": {
+          "bust": 46,
+          "waist": 38,
+          "bottom_length": 39,
+          "shoulder": 18
+        },
+        "4XL": {},
+        "5XL": {}
+      },
+      "fabric": {
+        "kurta": "Viscose Rayon",
+        "bottom": "Viscose Rayon"
+      },
+      "sleeve_length": "Three-Quarter Sleeves",
+      "pattern": "Printed",
+      "set_type": "Kurta with Dupatta and Bottomwear",
+      "stitch_type": "Stitched",
+      "net_quantity": "Single",
+      "country_of_origin": "India",
+      "sold_by": {
+        "shop_name": "Vastra  By Rashi",
+        "shop_rating": 3.9,
+        "shop_ratings_count": 325238,
+        "shop_followers": 4,
+        "shop_products": 72
+      },
+      "reviews_sample": [
+        {
+          "user": "Meesho User",
+          "rating": 4.0,
+          "date": "2025-07-04",
+          "comment": "Nice kurti set good for summer ,rayon fabric but somewhat thin ,go for it because of soft fabric and dupatta is pure cotton"
+        },
+        {
+          "user": "Rohit Sharma",
+          "rating": 5.0,
+          "date": "2025-06-02",
+          "comment": "Achha h lekin dupatta phata hua Hai lekin mene rakh liya h"
+        }
+      ],
+      "images": [
+        "image1_url",
+        "image2_url",
+        "image3_url",
+        "image4_url",
+        "image5_url"
+      ]
+    }
+  ]
+}

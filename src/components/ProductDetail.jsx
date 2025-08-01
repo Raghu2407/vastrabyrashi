@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import productData from '../data/products.json';
+import Store from './Store'; 
+
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -132,12 +134,14 @@ const ProductDetail = () => {
 
               <hr className="my-6 md:my-8 border-gray-200 dark:border-gray-800" />
 
-              <p className="mb-6 text-gray-500 dark:text-gray-400" dangerouslySetInnerHTML={{ __html: product.long_desc || product.short_desc }}>
-              </p>
+              <div className="mb-6 text-gray-500 dark:text-gray-400 text-justify" dangerouslySetInnerHTML={{ __html: product.long_desc || product.short_desc }}>
+              </div>
 
-
+              <Store />
             </div>
+            
           </div>
+          
         </div>
       </section>
 
