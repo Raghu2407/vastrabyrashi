@@ -29,7 +29,7 @@ export default function Example() {
                         <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
                         <span className="animate-wave">👋</span> Welcome to <span className="bg-clip-text  text-[#cca335]">Vastra </span> <span className='text-[#481310]'> by Rashi</span>
                         </h1>
-                        <p class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-2xl font-semibold">
+                        <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-2xl font-semibold">
                             Every Thread Tells Your Story. 
                         </p>
                         <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
